@@ -13,11 +13,11 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
-public class Rol {
+public class TipoDoc {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idRol;
-    
-    @Column(length = 50)
-    private String nomRol;
+    private Long idTipo;
+
+    @Column(length = 10)
+    private String tipoDoc;
 }
