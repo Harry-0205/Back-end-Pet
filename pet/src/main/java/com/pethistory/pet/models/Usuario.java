@@ -1,12 +1,19 @@
 package com.pethistory.pet.models;
 
 import java.sql.Date;
+import java.util.ArrayList;
+import java.util.List;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.ForeignKey;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -35,4 +42,12 @@ public class Usuario {
     @Column(columnDefinition = "VARBINARY(500)")
     private byte [] contraseña;
     private Date fecNac;
+
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "tipoDoc", foreignKey = @ForeignKey(name = "FK_Usuario_Doc"))
+    private TipoDoc tipoDoc;
+
+    @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Rol> rols = new ArrayList<>();
+
 }
