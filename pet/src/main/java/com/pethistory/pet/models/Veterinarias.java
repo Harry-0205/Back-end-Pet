@@ -18,13 +18,13 @@ public class Veterinarias {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idVet;
-    @Column(nullable = false, length = 50)
+    @Column( length = 50)
     private String nom;
-    @Column(nullable = false, length = 100)
+    @Column( length = 100)
     private String correo;
-    @Column(nullable = false, length = 255)
+    @Column( length = 255)
     private String foto;
-    @Column(nullable = false, length = 100)
+    @Column( length = 100)
     private String direc;
 
 

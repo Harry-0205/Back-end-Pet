@@ -36,7 +36,7 @@ public class Usuario {
     private String tel;
     private Integer contrato;
     @Column(length = 50)
-    private String direc;
+    private String dir;
     @Column(length = 100)
     private String correo;
     @Column(columnDefinition = "VARBINARY(500)")

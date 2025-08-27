@@ -12,7 +12,7 @@ import lombok.Getter;
 public class TipoDoc {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idTipo;
+    private Integer idTipo;
 
     @Column(length = 10)
     private String tipoDoc;
