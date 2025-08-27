@@ -9,11 +9,11 @@ import lombok.Getter;
 
 @Entity
 @Getter
-public class Rol {
+public class TipoDoc {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer idRol;
-    
-    @Column(length = 50)
-    private String nomRol;
+    private Integer idTipo;
+
+    @Column(length = 10)
+    private String tipoDoc;
 }
