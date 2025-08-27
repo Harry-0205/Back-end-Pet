@@ -5,15 +5,18 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import lombok.Getter;
 
 @Entity
 @Getter
-public class Rol {
+@Table(name="Especie")
+public class Especie {
     @Id
+    @Column(name = "idEspecie", length = 11)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer idRol;
-    
-    @Column(length = 50)
-    private String nomRol;
+    private Long idEspecie;
+    private String especie;
+
+
 }
