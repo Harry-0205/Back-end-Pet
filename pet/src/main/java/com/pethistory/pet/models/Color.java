@@ -13,8 +13,7 @@ import lombok.Getter;
 @Getter
 @Table(name="Color")
 public class Color {
-        @Id
-    @Column(name = "IdColor" , length = 11 )
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idColor;
     private String color;

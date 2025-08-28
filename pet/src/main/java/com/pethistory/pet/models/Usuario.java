@@ -26,18 +26,12 @@ public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long doc;
-    @Column(length = 20)
     private String nom;
-    @Column(length = 20)
     private String ape1;
-    @Column(length = 20)
     private String ape2;
-    @Column(length = 20)
-    private String tel;
-    private Integer contrato;
-    @Column(length = 50)
+    private Long tel;
+    private Long contrato;
     private String dir;
-    @Column(length = 100)
     private String correo;
     @Column(columnDefinition = "VARBINARY(500)")
     private byte [] contraseña;
