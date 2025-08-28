@@ -32,9 +32,9 @@ public class Usuario {
     private String ape1;
     @Column(length = 20)
     private String ape2;
-    @Column(length = 20)
-    private String tel;
-    private Integer contrato;
+    @Column(nullable = false)
+    private Long tel;
+    private Long contrato;
     @Column(length = 50)
     private String dir;
     @Column(length = 100)
