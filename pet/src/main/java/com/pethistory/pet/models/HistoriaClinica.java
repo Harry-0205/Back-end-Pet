@@ -18,4 +18,5 @@ public class HistoriaClinica {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idHistoria;
     private String anotaciones;
+    
 }

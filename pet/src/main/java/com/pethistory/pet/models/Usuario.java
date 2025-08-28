@@ -30,7 +30,7 @@ public class Usuario {
     private String ape1;
     private String ape2;
     private Long tel;
-    private Integer contrato;
+    private Long contrato;
     private String dir;
     private String correo;
     @Column(columnDefinition = "VARBINARY(500)")
