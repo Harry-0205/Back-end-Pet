@@ -25,4 +25,5 @@ public class HistoriaClinica {
     private Long idHistoria;
     @Column( length = 200)
     private String anotaciones;
+    
 }
