@@ -13,7 +13,6 @@ import lombok.Getter;
 @Table(name="Especie")
 public class Especie {
     @Id
-    @Column(name = "idEspecie", length = 11)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idEspecie;
     private String especie;
