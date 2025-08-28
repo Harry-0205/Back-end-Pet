@@ -13,7 +13,5 @@ public class TipoDoc {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idTipo;
-
-    @Column(length = 10)
     private String tipoDoc;
 }
