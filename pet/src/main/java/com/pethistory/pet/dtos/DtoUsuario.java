@@ -33,6 +33,7 @@ public class DtoUsuario {
     @NotNull
     private Long telefono;
 
+    
     private Long numContra;
 
     @NotNull
