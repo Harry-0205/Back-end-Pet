@@ -14,6 +14,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -32,9 +33,6 @@ public class Usuario {
     private Long tel;
     private Long contrato;
     private String dir;
-    private String correo;
-    @Column(columnDefinition = "VARBINARY(500)")
-    private byte [] contraseña;
     private Date fecNac;
 
     @ManyToOne(optional = false)
@@ -42,6 +40,9 @@ public class Usuario {
     private TipoDoc tipoDoc;
 
     @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Rol> rols = new ArrayList<>();
+    private List<Rol> idrol = new ArrayList<>();
 
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "correo", referencedColumnName = "usuario")
+    private Contrasena contrasena;
 }

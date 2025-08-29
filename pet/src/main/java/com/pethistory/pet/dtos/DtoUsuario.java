@@ -33,11 +33,7 @@ public class DtoUsuario {
     @NotNull
     private Long telefono;
 
-    
     private Long numContra;
-
-    @NotNull
-    private byte [] contraseña;
 
     @NotNull
     @Size(min = 3, max = 50)
@@ -48,10 +44,14 @@ public class DtoUsuario {
     private String email;
 
     @NotNull
+    @Size(min = 7, max = 16)
+    private byte [] contrasena;
+
+    @NotNull
     private Date fechaNac;
 
     @NotNull
-    private TipoDoc tipoDoc;
+    private TipoDoc tipDoc;
 
     @NotNull
     private List<Rol> roles;
