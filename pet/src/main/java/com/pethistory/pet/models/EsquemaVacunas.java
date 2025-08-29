@@ -1,15 +1,15 @@
 package com.pethistory.pet.models;
 
+import java.io.Serializable;
 import java.sql.Date;
 
-import jakarta.persistence.Column;
+import jakarta.persistence.Embeddable;
+import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
 import jakarta.persistence.ForeignKey;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.MapsId;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -19,31 +19,26 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 public class EsquemaVacunas {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idEsquema;
     private Date fecVacu;
+    @Embeddable
+    public class EsquemaVacunasId implements Serializable {
+        private Long idMascota;
+        private Long idVacuna;
+    }
+    @EmbeddedId
+    private EsquemaVacunasId id = new EsquemaVacunasId();
 
-    @ManyToOne(optional = false)
-    @JoinColumn(name = "vacunas", foreignKey = @ForeignKey(name = "FK_Id_Vacuna"))
+    @ManyToOne
+    @MapsId("idVacuna")
     private Vacunas vacunas;
 
-    @ManyToOne(optional = false)
-    @JoinColumn(name = "Mascota", foreignKey = @ForeignKey(name = "FK_id_Mascota"))
+    @ManyToOne
+    @MapsId("idMascota")
     private Mascota mascota;
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "Usuario", foreignKey = @ForeignKey(name = "FK_UsuarioDoc"))
     private Usuario usuario;
-
-    
-
-
-
-
-
-
-
 
 
 }
