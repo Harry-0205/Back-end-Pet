@@ -9,22 +9,17 @@ import lombok.Getter;
 
 @Getter
 @Entity
-@Table(name = "veterinaria")
-public class Veterinarias {
+@Table(name = "estado")
+public class Estado {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
-    private Long idVeterinaria;
+    private Long idEstado;
 
     @NotNull
     private String nombre;
-    @NotNull
-    private String direccion;
-    @NotNull
-    private String telefono;
 
 
-    @OneToMany(mappedBy = "veterinaria", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "estado", cascade = CascadeType.ALL, orphanRemoval = true)
     private Agendamiento agendamientos;
 }
