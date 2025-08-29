@@ -42,7 +42,6 @@ public class Usuario {
     @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Rol> idrol = new ArrayList<>();
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "correo", referencedColumnName = "usuario")
-    private Contrasena contrasena;
+    @OneToOne(mappedBy = "usuario")
+    private Contrasena correo;
 }
