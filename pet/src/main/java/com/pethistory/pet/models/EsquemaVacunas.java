@@ -2,7 +2,6 @@ package com.pethistory.pet.models;
 
 import java.sql.Date;
 
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.ForeignKey;
 import jakarta.persistence.GeneratedValue;
@@ -35,15 +34,5 @@ public class EsquemaVacunas {
     @ManyToOne(optional = false)
     @JoinColumn(name = "Usuario", foreignKey = @ForeignKey(name = "FK_UsuarioDoc"))
     private Usuario usuario;
-
-    
-
-
-
-
-
-
-
-
 
 }
