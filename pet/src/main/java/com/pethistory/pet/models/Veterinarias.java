@@ -14,6 +14,7 @@ public class Veterinarias {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     private Long idVeterinaria;
 
     @NotNull
