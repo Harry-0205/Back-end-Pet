@@ -1,6 +1,4 @@
 package com.pethistory.pet.models;
-
-
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -17,7 +15,4 @@ public class Color {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idColor;
     private String color;
-
-    
-
 }

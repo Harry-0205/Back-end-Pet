@@ -1,6 +1,4 @@
 package com.pethistory.pet.models;
-
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -16,6 +14,4 @@ public class Especie {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idEspecie;
     private String especie;
-
-
 }
