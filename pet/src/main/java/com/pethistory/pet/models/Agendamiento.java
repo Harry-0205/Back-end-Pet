@@ -2,13 +2,16 @@ package com.pethistory.pet.models;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import java.security.Timestamp;
 import java.sql.Date;
-import java.util.List;
 
 
+@NoArgsConstructor
+@AllArgsConstructor
 @Getter
 @Entity
 @Table(name = "agendamiento")
@@ -24,17 +27,22 @@ public class Agendamiento {
     private Date fecAsi;
 
 
-    @ManyToOne
-    @JoinColumn(name = "id_procedimiento", nullable = false)
-    private List<Procedimiento> procedimientos;
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "id_mascota", foreignKey = @ForeignKey(name = "FK_mascota"))
+    private Mascota mascota;
 
 
-    @ManyToOne
-    @JoinColumn(name = "id_veterinaria", nullable = false)
-    private List<Veterinarias> veterinarias;
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "id_procedimiento", foreignKey = @ForeignKey(name = "FK_procedimiento"))
+    private Procedimiento procedimientos;
 
 
-    @ManyToOne
-    @JoinColumn(name = "id_estado", nullable = false)
-    private List<Estado> Estados;
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "id_veterinaria", foreignKey = @ForeignKey(name = "FK_veterinaria"))
+    private Veterinarias veterinarias;
+
+
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "id_estado", foreignKey = @ForeignKey(name = "FK_estado"))
+    private Estado Estados;
 }

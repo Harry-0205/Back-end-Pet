@@ -1,13 +1,17 @@
 package com.pethistory.pet.models;
 
+import java.sql.Date;
+
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotNull;
-import lombok.Getter;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 
 
-
-@Getter
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
 @Entity
 @Table(name = "procedimiento")
 public class Procedimiento {
@@ -16,13 +20,9 @@ public class Procedimiento {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idProcedimiento;
 
-    @NotNull
-    private String nombre;
-    @NotNull
-    private String descripcion;
+    private String procedimiento;
+    private Integer costo;
+    private Date duracion;
+    private String Anotaciones;
 
-
-    @OneToMany(mappedBy = "procedimiento", cascade = CascadeType.ALL, orphanRemoval = true)
-    private Agendamiento agendamientos;
 }
-
