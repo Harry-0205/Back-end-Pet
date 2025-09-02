@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity
+@Entity 
 @Data
 public class Veterinarias {
     @Id
