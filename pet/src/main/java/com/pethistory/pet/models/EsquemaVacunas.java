@@ -23,6 +23,7 @@ import lombok.NoArgsConstructor;
 @Data
 public class EsquemaVacunas {
     private Date fecVacu;
+    private String dosis;
     @Embeddable
     public class EsquemaVacunasId implements Serializable {
         private Long idMascota;
