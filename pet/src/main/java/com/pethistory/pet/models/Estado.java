@@ -3,10 +3,11 @@ package com.pethistory.pet.models;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 
 
-
+@NoArgsConstructor
 @Getter
 @Entity
 @Table(name = "estado")
@@ -17,9 +18,8 @@ public class Estado {
     private Long idEstado;
 
     @NotNull
-    private String nombre;
+    private Boolean realizado;
+    @NotNull
+    private Boolean cancelado;
 
-
-    @OneToMany(mappedBy = "estado", cascade = CascadeType.ALL, orphanRemoval = true)
-    private Agendamiento agendamientos;
 }

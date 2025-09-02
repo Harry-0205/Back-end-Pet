@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 
 import java.sql.Date;
 import java.sql.Timestamp;
-import java.util.List;
+
 
 import com.pethistory.pet.models.Estado;
 import com.pethistory.pet.models.Procedimiento;
@@ -28,11 +28,11 @@ public class AgendamientoDto {
     private Date fecAsi;
 
     @NotNull
-    private List<Procedimiento> procedimientos;
+    private Procedimiento procedimientos;
 
     @NotNull
-    private List<Veterinarias> veterinarias;
+    private Veterinarias veterinarias;
 
     @NotNull
-    private List<Estado> estados;
+    private Estado estados;
 }

@@ -1,30 +1,24 @@
 package com.pethistory.pet.models;
 
-import jakarta.persistence.*;
-import jakarta.validation.constraints.NotNull;
-import lombok.Getter;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 
-
-
-@Getter
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
-@Table(name = "veterinaria")
+@Data
 public class Veterinarias {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
-    private Long idVeterinaria;
-
-    @NotNull
-    private String nombre;
-    @NotNull
-    private String direccion;
-    @NotNull
-    private String telefono;
-
-
-    @OneToMany(mappedBy = "veterinaria", cascade = CascadeType.ALL, orphanRemoval = true)
-    private Agendamiento agendamientos;
+    private Long idVet;
+    private String nom;
+    private String correo;
+    private String foto;
+    private String direc;
 }
