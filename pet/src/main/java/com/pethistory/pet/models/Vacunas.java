@@ -26,7 +26,6 @@ public class Vacunas {
     private String dosis;
     @Column(length = 255)
     private String duracion;
-    @Column(length = 255)
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "especie", foreignKey = @ForeignKey(name = "FK_Id_Especie"))
