@@ -17,7 +17,7 @@ import jakarta.persistence.JoinColumn;
 public class Contrasena {
     @Id
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "user", referencedColumnName = "correo")
+    @JoinColumn(name = "correo", referencedColumnName = "correo")
     private Usuario usuario;
 
     @Column(columnDefinition  = "VARBINARY(500)")

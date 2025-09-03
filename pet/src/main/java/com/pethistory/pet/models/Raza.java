@@ -23,8 +23,10 @@ public class Raza {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long idRaza;
-    @Column(name = "idRaza" , length = 11)
+    
+    @Column(name = "nomRaza" , length = 11)
     private String Raza;
+
     @ManyToOne(optional = false)
     @JoinColumn(name = "especie" , foreignKey =  @ForeignKey(name = "FK_Id_Especie"))
     private Especie especie;

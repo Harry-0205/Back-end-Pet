@@ -34,14 +34,15 @@ public class Usuario {
     private Long contrato;
     private String dir;
     private Date fecNac;
+    private String correo;
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "tipoDoc", foreignKey = @ForeignKey(name = "FK_Usuario_Doc"))
     private TipoDoc tipoDoc;
 
-    @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "idRol", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Rol> idrol = new ArrayList<>();
 
     @OneToOne(mappedBy = "usuario")
-    private Contrasena correo;
+    private Contrasena contrasena;
 }
