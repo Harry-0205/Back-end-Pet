@@ -12,10 +12,10 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@EqualsAndHashCode(of = {"usuarioDoc","idRol"})
+@EqualsAndHashCode(of = {"usuario","idRol"})
 public class UsuarioRolId implements Serializable{
      public UsuarioRolId( Integer id1, Integer id2){
      }
-     private Long usuarioDoc;
+     private Long usuario;
      private Long idRol;
 }

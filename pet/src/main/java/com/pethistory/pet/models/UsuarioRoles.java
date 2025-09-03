@@ -20,14 +20,14 @@ import lombok.NoArgsConstructor;
 public class UsuarioRoles {
     @Embeddable
     public class UsuarioRolId implements Serializable {
-        private Long usuarioDoc;
+        private Long usuario;
         private Long idRol;
     }
     @EmbeddedId
     private UsuarioRolId  id = new UsuarioRolId();
 
     @ManyToOne
-    @MapsId("usuarioDoc")
+    @MapsId("usuario")
     private Usuario usuario;
 
     @ManyToOne
