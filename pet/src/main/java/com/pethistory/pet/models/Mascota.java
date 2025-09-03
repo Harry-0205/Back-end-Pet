@@ -25,7 +25,6 @@ public class Mascota {
     private long idMascota;
     private String nombre;
     private Date fecNam;
-    private long idEsquema;
     private String foto;
 
 
