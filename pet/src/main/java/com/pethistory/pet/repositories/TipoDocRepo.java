@@ -4,6 +4,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.pethistory.pet.models.TipoDoc;
 
-public interface TipoDocRepo extends JpaRepository<TipoDoc,Long> {
+public interface TipoDocRepo extends JpaRepository<TipoDoc,Integer> {
 
 }

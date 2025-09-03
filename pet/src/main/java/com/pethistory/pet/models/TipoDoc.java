@@ -7,8 +7,8 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.Getter;
 
-@Entity
 @Getter
+@Entity
 public class TipoDoc {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

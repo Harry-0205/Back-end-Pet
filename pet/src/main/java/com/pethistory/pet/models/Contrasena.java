@@ -16,10 +16,11 @@ import jakarta.persistence.JoinColumn;
 @Data
 public class Contrasena {
     @Id
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "correo", referencedColumnName = "correo")
-    private Usuario usuario;
+    private String correo;
 
     @Column(columnDefinition  = "VARBINARY(500)")
     private byte [] contra;
+
+    @OneToOne(mappedBy = "contrasena")
+    private Usuario usuario;
 }
