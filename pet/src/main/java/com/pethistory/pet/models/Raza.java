@@ -28,6 +28,6 @@ public class Raza {
     private String Raza;
 
     @ManyToOne(optional = false)
-    @JoinColumn(name = "especie" , foreignKey =  @ForeignKey(name = "FK_Id_Especie"))
+    @JoinColumn(name = "especie" , foreignKey =  @ForeignKey(name = "FK_Id_Especie_1"))
     private Especie especie;
 }
