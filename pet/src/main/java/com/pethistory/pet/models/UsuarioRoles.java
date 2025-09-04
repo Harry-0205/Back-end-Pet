@@ -23,12 +23,12 @@ public class UsuarioRoles {
 
     @ManyToOne
     @MapsId("idDoc")
-    @JoinColumn(name = "docUsuario",foreignKey = @ForeignKey(name="FK_usuario_doc"))
+    @JoinColumn(name = "Doc", foreignKey = @ForeignKey(name = "FK_doc"))
     private Usuario usuario;
 
     @ManyToOne
     @MapsId("idRol")
-    @JoinColumn(name = "idRol",foreignKey = @ForeignKey(name="FK_id_rol"))
+    @JoinColumn(name = "Rol",foreignKey = @ForeignKey(name="FK_id_rol"))
     private Rol rol;
 
     @ManyToOne(optional = false)

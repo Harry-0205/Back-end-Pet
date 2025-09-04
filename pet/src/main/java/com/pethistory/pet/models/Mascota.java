@@ -33,7 +33,7 @@ public class Mascota {
     private Color color;
 
     @ManyToOne(optional = false)
-    @JoinColumn(name = "Usuario", foreignKey = @ForeignKey(name = "FK_Usuario_Doc"))
+    @JoinColumn(name = "Usuario", foreignKey = @ForeignKey(name = "FK_Usuario_3"))
     private Usuario usuario;
 
     @ManyToOne(optional = false)

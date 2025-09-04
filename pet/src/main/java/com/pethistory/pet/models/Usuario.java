@@ -36,7 +36,7 @@ public class Usuario {
     private Date fecNac;
 
     @ManyToOne(optional = false)
-    @JoinColumn(name = "idTipo", foreignKey = @ForeignKey(name = "FK_Usuario_Doc"))
+    @JoinColumn(name = "idTipo", foreignKey = @ForeignKey(name = "FK_Usuario_1"))
     private TipoDoc tipoDoc;
 
     @OneToMany(mappedBy = "usuario")
