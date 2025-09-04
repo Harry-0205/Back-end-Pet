@@ -24,11 +24,6 @@ import lombok.NoArgsConstructor;
 public class EsquemaVacunas {
     private Date fecVacu;
     private String dosis;
-    @Embeddable
-    public class EsquemaVacunasId implements Serializable {
-        private Long idMascota;
-        private Long idVacuna;
-    }
     @EmbeddedId
     private EsquemaVacunasId id = new EsquemaVacunasId();
 
@@ -41,7 +36,7 @@ public class EsquemaVacunas {
     private Mascota mascota;
 
     @ManyToOne(optional = false)
-    @JoinColumn(name = "Usuario", foreignKey = @ForeignKey(name = "FK_UsuarioDoc"))
+    @JoinColumn(name = "Usuario", foreignKey = @ForeignKey(name = "FK_Usuario_0"))
     private Usuario usuario;
 
 

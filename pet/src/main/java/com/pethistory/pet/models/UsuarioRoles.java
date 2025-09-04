@@ -2,7 +2,7 @@ package com.pethistory.pet.models;
 
 import java.io.Serializable;
 
-import jakarta.persistence.Embeddable;
+
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
 import jakarta.persistence.ForeignKey;
@@ -18,24 +18,21 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Data
 public class UsuarioRoles {
-    @Embeddable
-    public class UsuarioRolId implements Serializable {
-        private Long usuario;
-        private Long idRol;
-    }
     @EmbeddedId
     private UsuarioRolId  id = new UsuarioRolId();
 
     @ManyToOne
-    @MapsId("usuario")
+    @MapsId("idDoc")
+    @JoinColumn(name = "Doc", foreignKey = @ForeignKey(name = "FK_doc"))
     private Usuario usuario;
 
     @ManyToOne
     @MapsId("idRol")
+    @JoinColumn(name = "Rol",foreignKey = @ForeignKey(name="FK_id_rol"))
     private Rol rol;
 
     @ManyToOne(optional = false)
-    @JoinColumn(name = "veterinariasIdVet", foreignKey = @ForeignKey(name="FK_idVet"))
+    @JoinColumn(name = "idVet", foreignKey = @ForeignKey(name="FK_idVet"))
     private Veterinarias veterinarias;
 
 
