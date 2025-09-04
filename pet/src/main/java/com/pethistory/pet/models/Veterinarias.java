@@ -21,4 +21,6 @@ public class Veterinarias {
     private String correo;
     private String foto;
     private String direc;
+
+    
 }
