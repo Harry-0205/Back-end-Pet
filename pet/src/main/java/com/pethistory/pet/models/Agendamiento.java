@@ -3,7 +3,7 @@ package com.pethistory.pet.models;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
-import lombok.Getter;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.security.Timestamp;
@@ -12,7 +12,7 @@ import java.sql.Date;
 
 @NoArgsConstructor
 @AllArgsConstructor
-@Getter
+@Data
 @Entity
 @Table(name = "agendamiento")
 public class Agendamiento {

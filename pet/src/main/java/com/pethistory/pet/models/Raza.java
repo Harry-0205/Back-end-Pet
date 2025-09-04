@@ -16,7 +16,6 @@ import lombok.Getter;
 
 
 @Entity
-@Getter
 @Data
 @Table(name =  "Raza")
 public class Raza {
