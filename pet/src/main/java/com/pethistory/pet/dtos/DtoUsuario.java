@@ -1,10 +1,6 @@
 package com.pethistory.pet.dtos;
 
 import java.sql.Date;
-import java.util.List;
-
-import com.pethistory.pet.models.Rol;
-import com.pethistory.pet.models.TipoDoc;
 
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
@@ -16,7 +12,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 public class DtoUsuario {
-    @NotNull
+
     private Long numDoc;
 
     @NotNull
@@ -40,19 +36,18 @@ public class DtoUsuario {
     private String direccion;
 
     @NotNull
-    @Size(min = 3, max = 100)
-    private String email;
-
-    @NotNull
-    @Size(min = 7, max = 16)
-    private byte [] contrasena;
-
-    @NotNull
     private Date fechaNac;
 
     @NotNull
-    private TipoDoc tipDoc;
+    private Integer tipdoc;
 
     @NotNull
-    private List<Rol> roles;
+    private String nomTipoDoc;
+
+    @NotNull
+    @Size(min = 3, max = 100)
+    private String correo;
+
+    @NotNull
+    private byte [] passw;
 }

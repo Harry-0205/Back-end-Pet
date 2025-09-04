@@ -1,5 +1,9 @@
 package com.pethistory.pet.mapper;
 
-public interface UsuarioMapper {
+import com.pethistory.pet.dtos.DtoUsuario;
+import com.pethistory.pet.models.Usuario;
 
+public interface UsuarioMapper {
+    Usuario toUsuario(DtoUsuario dtoUsuario);
+    DtoUsuario toDtoUsuario(Usuario usuario);
 }
