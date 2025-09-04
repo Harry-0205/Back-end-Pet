@@ -10,6 +10,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToOne;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -39,7 +40,9 @@ public class Mascota {
     @ManyToOne(optional = false)
     @JoinColumn(name = "raza", foreignKey =  @ForeignKey(name = "FK_id_Raza"))
     private Raza raza;
-
+    
+    @OneToOne(mappedBy = "mascota")
+    private HistoriaClinica historiaClinica;
 
 
 

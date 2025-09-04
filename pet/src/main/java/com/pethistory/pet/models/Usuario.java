@@ -41,7 +41,6 @@ public class Usuario {
     @OneToMany(mappedBy = "usuario")
     private List<UsuarioRoles> roles;
 
-
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "correo", referencedColumnName = "correo",foreignKey = @ForeignKey(name = "FK_Correo"))
     private Contrasena contrasena;

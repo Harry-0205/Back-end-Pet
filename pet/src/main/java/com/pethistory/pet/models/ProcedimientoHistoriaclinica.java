@@ -28,4 +28,10 @@ public class ProcedimientoHistoriaclinica {
     @MapsId("idProcedimiento")
     @JoinColumn(name = "procedimiento_id", foreignKey = @ForeignKey(name="FK_procedimiento_historia"))
     private Procedimiento procedimiento;
+
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "UsuarioDoc", foreignKey = @ForeignKey(name = "FK_procedimientohisto_usuario"))
+    private Usuario usuario;
+    
+
 }
