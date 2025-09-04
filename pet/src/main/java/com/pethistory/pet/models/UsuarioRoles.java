@@ -1,7 +1,5 @@
 package com.pethistory.pet.models;
 
-import java.io.Serializable;
-
 
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
