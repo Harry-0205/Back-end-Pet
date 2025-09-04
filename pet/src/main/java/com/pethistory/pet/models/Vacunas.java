@@ -14,7 +14,7 @@ import lombok.Data;
 
 @Entity
 @Data
-public class Vacunas {
+public class Vacunas{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long idVacuna;
@@ -26,9 +26,8 @@ public class Vacunas {
     private String dosis;
     @Column(length = 255)
     private String duracion;
-    @Column(length = 255)
 
     @ManyToOne(optional = false)
-    @JoinColumn(name = "especie", foreignKey = @ForeignKey(name = "FK_Id_Especie"))
+    @JoinColumn(name = "idEspecie", foreignKey = @ForeignKey(name = "FK_Id_Especie"))
     private Especie especie;
 }
