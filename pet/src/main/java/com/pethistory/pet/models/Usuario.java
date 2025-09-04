@@ -1,7 +1,6 @@
 package com.pethistory.pet.models;
 
 import java.sql.Date;
-import java.util.ArrayList;
 import java.util.List;
 
 import jakarta.persistence.CascadeType;
@@ -41,7 +40,6 @@ public class Usuario {
 
     @OneToMany(mappedBy = "usuario")
     private List<UsuarioRoles> roles;
-
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "correo", referencedColumnName = "correo",foreignKey = @ForeignKey(name = "FK_Correo"))
