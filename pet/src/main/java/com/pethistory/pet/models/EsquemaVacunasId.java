@@ -13,7 +13,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 @Embeddable
-@EqualsAndHashCode(of ={"IdMascota", "IdVacuna"})
 public class EsquemaVacunasId implements Serializable {
     public EsquemaVacunasId(Integer id, Integer id2){
 
