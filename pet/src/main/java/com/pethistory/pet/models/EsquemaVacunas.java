@@ -29,10 +29,12 @@ public class EsquemaVacunas {
 
     @ManyToOne
     @MapsId("idVacuna")
+    @JoinColumn(name = "Vacuna", foreignKey = @ForeignKey(name="FK_vacu"))
     private Vacunas vacunas;
 
     @ManyToOne
     @MapsId("idMascota")
+    @JoinColumn(name = "Mascota", foreignKey = @ForeignKey(name="FK_masc"))
     private Mascota mascota;
 
     @ManyToOne(optional = false)
