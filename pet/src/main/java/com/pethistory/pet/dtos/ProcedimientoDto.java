@@ -14,6 +14,7 @@ import java.sql.Time;
 @Data
 public class ProcedimientoDto {
 
+    
     private Long idProcedimiento;
 
     @NotNull
