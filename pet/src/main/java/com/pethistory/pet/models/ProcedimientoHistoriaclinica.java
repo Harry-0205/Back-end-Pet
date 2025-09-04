@@ -19,7 +19,7 @@ import lombok.NoArgsConstructor;
 public class ProcedimientoHistoriaclinica {
     @Embeddable
     public class ProHistoriaClinicaID implements Serializable{
-        private Integer idHistoria;
+        private Long idHistoria;
         private Long idProcedimiento;
     }
 

@@ -14,7 +14,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @EqualsAndHashCode(of = {"idHistoria","idProcedimiento"})
 public class ProHistoriaClinicaID implements Serializable{
-    public ProHistoriaClinicaID( Integer id1, Integer id2){
+    public ProHistoriaClinicaID( Long id1, Integer id2){
     }
     private Integer idHistoria;
     private Long idProcedimiento;
