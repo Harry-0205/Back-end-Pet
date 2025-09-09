@@ -43,5 +43,5 @@ public class Usuario {
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "correo", referencedColumnName = "correo",foreignKey = @ForeignKey(name = "FK_Correo"))
-    private Contrasena contrasena;
+    private Cuenta cuenta;
 }

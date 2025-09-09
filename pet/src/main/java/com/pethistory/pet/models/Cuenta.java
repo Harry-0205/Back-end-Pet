@@ -12,13 +12,13 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class Contrasena {
+public class Cuenta {
     @Id
     private String correo;
 
     @Column(columnDefinition  = "VARBINARY(500)")
     private byte [] contra;
 
-    @OneToOne(mappedBy = "contrasena")
+    @OneToOne(mappedBy = "cuenta")
     private Usuario usuario;
 }
