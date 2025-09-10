@@ -65,4 +65,6 @@ public class UsuarioMapperImple implements UsuarioMapper{
             usuario.getCuenta().getCorreo(),
             usuario.getCuenta().getContra());
     }
+
+    
 }

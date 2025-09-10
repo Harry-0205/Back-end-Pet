@@ -27,7 +27,7 @@ public class UsuarioServiceImple implements UsuarioService {
         return usuMap.toDtoUsuario(guardado);
     }
     @Override
-    public DtoUsuario buscarId(Long id){
+    public DtoUsuario buscarIdAll(Long id){
         return usuRepo.findById(id).map(usuMap::toDtoUsuario).orElseThrow(()-> new EntityNotFoundException("Usuario no encontrado"));
     }
 }
