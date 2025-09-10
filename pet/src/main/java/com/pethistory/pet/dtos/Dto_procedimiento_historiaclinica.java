@@ -8,18 +8,15 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class VeterinariasDto {
+public class Dto_procedimiento_historiaclinica {
     @NotNull
-    private Long idVeterinaria;
+    private Integer idhisto;
     @NotNull
-    private String nombre;
+    private Long idProcedi;
     @NotNull
-    private String mail;
+    private String anota;
     @NotNull
-    private String fotico;
-    @NotNull
-    private String direccion;
+    private Long usuaDog;
 
-    
-
+    private String nombDoc;
 }
