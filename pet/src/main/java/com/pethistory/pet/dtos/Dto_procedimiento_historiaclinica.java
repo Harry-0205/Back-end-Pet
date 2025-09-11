@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @Data
 public class Dto_procedimiento_historiaclinica {
     @NotNull
-    private Integer idhisto;
+    private Long idhisto;
     @NotNull
     private Long idProcedi;
     @NotNull
