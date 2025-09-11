@@ -53,14 +53,18 @@ public class ProcedimientoHiscliMapperImple implements ProcedimientoHiscliMapper
         return ph;
     }
     @Override
-    public Dto_procedimiento_historiaclinica toDto_procedimiento_historiaclinica(ProcedimientoHistoriaclinica procedimientoHistoriaclinica){
-        if ( procedimientoHistoriaclinica== null) {
+    public Dto_procedimiento_historiaclinica toDto_procedimiento_historiaclinica(ProcedimientoHistoriaclinica proHisCli){
+        if ( proHisCli== null) {
             return null;
             
         }
         return new Dto_procedimiento_historiaclinica(
-            
-        ) 
+            proHisCli.getHistoriaClinica().getIdHistoria(),
+            proHisCli.getProcedimiento().getIdProcedimiento(),
+            proHisCli.getAnotaciones(),
+            proHisCli.getUsuario().getDoc(),
+            proHisCli.getUsuario().getNom()
+        );
     }
 
 }
