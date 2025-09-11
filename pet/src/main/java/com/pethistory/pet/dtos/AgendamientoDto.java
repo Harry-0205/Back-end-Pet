@@ -36,10 +36,7 @@ public class AgendamientoDto {
 
     @NotNull
     private String nomVet;
-
+    
     @NotNull
-    private Long idEstado;
-
-    @NotNull
-    private String estados;
+    private Boolean estado;
 }

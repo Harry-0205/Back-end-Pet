@@ -21,11 +21,11 @@ public class Agendamiento {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idCita;
 
-    @NotNull
     private Date fecAg;
-    @NotNull
+
     private Date fecAsi;
 
+    private Boolean estado;
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "id_mascota", foreignKey = @ForeignKey(name = "FK_mascota"))
@@ -40,9 +40,4 @@ public class Agendamiento {
     @ManyToOne(optional = false)
     @JoinColumn(name = "id_veterinaria", foreignKey = @ForeignKey(name = "FK_veterinaria"))
     private Veterinarias veterinaria;
-
-
-    @ManyToOne(optional = false)
-    @JoinColumn(name = "id_estado", foreignKey = @ForeignKey(name = "FK_estado"))
-    private Estado Estado;
 }
