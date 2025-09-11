@@ -6,12 +6,10 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.sql.Date;
-import java.sql.Timestamp;
 
 
-import com.pethistory.pet.models.Estado;
-import com.pethistory.pet.models.Procedimiento;
-import com.pethistory.pet.models.Veterinarias;
+
+
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -22,17 +20,26 @@ public class AgendamientoDto {
     private Long idCita;
 
     @NotNull
-    private Timestamp fecAg;
+    private Date fecAg;
 
     @NotNull
     private Date fecAsi;
 
     @NotNull
-    private Procedimiento procedimientos;
+    private Long idProcedimientos;
+    
+    @NotNull
+    private String procedimientos;
 
     @NotNull
-    private Veterinarias veterinarias;
+    private Long idVeterinarias;
 
     @NotNull
-    private Estado estados;
+    private String nomVet;
+
+    @NotNull
+    private Long idEstado;
+
+    @NotNull
+    private String estados;
 }

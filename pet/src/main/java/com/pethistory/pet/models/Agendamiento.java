@@ -6,7 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.security.Timestamp;
+
 import java.sql.Date;
 
 
@@ -22,7 +22,7 @@ public class Agendamiento {
     private Long idCita;
 
     @NotNull
-    private Timestamp fecAg;
+    private Date fecAg;
     @NotNull
     private Date fecAsi;
 
@@ -34,15 +34,15 @@ public class Agendamiento {
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "id_procedimiento", foreignKey = @ForeignKey(name = "FK_procedimiento"))
-    private Procedimiento procedimientos;
+    private Procedimiento procedimiento;
 
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "id_veterinaria", foreignKey = @ForeignKey(name = "FK_veterinaria"))
-    private Veterinarias veterinarias;
+    private Veterinarias veterinaria;
 
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "id_estado", foreignKey = @ForeignKey(name = "FK_estado"))
-    private Estado Estados;
+    private Estado Estado;
 }
