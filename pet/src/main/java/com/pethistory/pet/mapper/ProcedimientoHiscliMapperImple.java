@@ -59,8 +59,8 @@ public class ProcedimientoHiscliMapperImple implements ProcedimientoHiscliMapper
             
         }
         return new Dto_procedimiento_historiaclinica(
-            proHisCli.getHistoriaClinica().getIdHistoria(),
-            proHisCli.getProcedimiento().getIdProcedimiento(),
+            proHisCli.getHistoriaClinica().getId(),
+            proHisCli.getProcedimiento().getId(),
             proHisCli.getAnotaciones(),
             proHisCli.getUsuario().getDoc(),
             proHisCli.getUsuario().getNom()
