@@ -1,12 +1,11 @@
 package com.pethistory.pet.models;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.security.Timestamp;
+
 import java.sql.Date;
 
 
@@ -21,11 +20,11 @@ public class Agendamiento {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idCita;
 
-    @NotNull
-    private Timestamp fecAg;
-    @NotNull
+    private Date fecAg;
+
     private Date fecAsi;
 
+    private Boolean estado;
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "id_mascota", foreignKey = @ForeignKey(name = "FK_mascota"))
@@ -34,15 +33,10 @@ public class Agendamiento {
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "id_procedimiento", foreignKey = @ForeignKey(name = "FK_procedimiento"))
-    private Procedimiento procedimientos;
+    private Procedimiento procedimiento;
 
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "id_veterinaria", foreignKey = @ForeignKey(name = "FK_veterinaria"))
-    private Veterinarias veterinarias;
-
-
-    @ManyToOne(optional = false)
-    @JoinColumn(name = "id_estado", foreignKey = @ForeignKey(name = "FK_estado"))
-    private Estado Estados;
+    private Veterinarias veterinaria;
 }
