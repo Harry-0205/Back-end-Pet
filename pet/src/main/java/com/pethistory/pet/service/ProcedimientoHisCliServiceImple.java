@@ -31,7 +31,7 @@ public class ProcedimientoHisCliServiceImple implements ProcedimientoHisCliServi
     public Dto_procedimiento_historiaclinica crear(Dto_procedimiento_historiaclinica dtoprohiscli){
         ProcedimientoHistoriaclinica prohiscli=proHisCliMap.toProcedimientoHistoriaclinica(dtoprohiscli);
 
-        ProHistoriaClinicaID id=new ProHistoriaClinicaID(dtoprohiscli.getIdProcedi(),dtoprohiscli.getIdhisto());
+        ProHistoriaClinicaID id =new ProHistoriaClinicaID(dtoprohiscli.getIdhisto(),dtoprohiscli.getIdProcedi());
         if (proHisCliRepo.existsById(id)) {
             throw new IllegalStateException("ya existe historia clinica");
             

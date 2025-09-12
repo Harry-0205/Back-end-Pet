@@ -21,7 +21,7 @@ public class MascotaController {
         this.mascSer=mascSer;
     }
 
-    @GetMapping("buscar/{id}")
+    @GetMapping("/buscar/{id}")
     public ResponseEntity<DtoMascota> getMascAll (@PathVariable Long id) {
         DtoMascota mascDto = mascSer.buscarIdAll(id);
         return ResponseEntity.ok(mascDto);
