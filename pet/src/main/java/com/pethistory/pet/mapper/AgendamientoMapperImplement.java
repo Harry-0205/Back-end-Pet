@@ -53,7 +53,7 @@ public class AgendamientoMapperImplement implements AgendamientoMapper{
     agendamiento.getIdCita(),
     agendamiento.getFecAg(),
     agendamiento.getFecAsi(),
-    agendamiento.getProcedimiento().getIdProcedimiento(),
+    agendamiento.getProcedimiento().getId(),
     agendamiento.getProcedimiento().getProcedimiento(),
     agendamiento.getVeterinaria().getIdVet(),
     agendamiento.getVeterinaria().getNom(),
