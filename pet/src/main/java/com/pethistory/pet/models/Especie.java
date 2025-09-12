@@ -12,6 +12,6 @@ import lombok.Getter;
 public class Especie {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idEspecie;
+    private Long id;
     private String especie;
 }

@@ -15,7 +15,7 @@ import lombok.Data;
 public class Vacunas{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long idVacuna;
+    private long id;
     @Column(length = 11)
     private String vacuna;
     @Column(length = 50)
