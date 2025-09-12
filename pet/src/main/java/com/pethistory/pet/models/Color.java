@@ -15,5 +15,5 @@ public class Color {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idColor;
 
-    private String color;
+    private String nomColor;
 }

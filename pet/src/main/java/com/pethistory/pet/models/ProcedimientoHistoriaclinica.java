@@ -18,6 +18,7 @@ public class ProcedimientoHistoriaclinica {
 
     @EmbeddedId
     private ProHistoriaClinicaID  id = new ProHistoriaClinicaID();
+    private String anotaciones;
 
     @ManyToOne
     @MapsId("idHistoria")

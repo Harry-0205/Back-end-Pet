@@ -17,7 +17,7 @@ public class DtoMascota {
 
     @NotNull
     @Size(min = 3, max = 50)
-    private String masc;
+    private String nom;
 
     @NotNull 
     private Date fecNam;
@@ -25,4 +25,24 @@ public class DtoMascota {
     @NotNull
     @Size(min = 3, max = 255)
     private String foto;
+
+    @NotNull
+    private long idColor;
+
+    private String nomCol;
+
+    @NotNull
+    private Long usuarioDoc;
+
+    private String nomUsu;
+
+    @NotNull
+    private long idRaza;
+
+    private String nomRaza;
+
+    
 }
+
+
+
