@@ -23,6 +23,6 @@ public class VacunasDto {
 
     @NotNull
     private String duracion;
-    @NotNull
     private Long idEspecie;
+    private String especie;
 }
