@@ -1,4 +1,4 @@
-package com.pethistory.pet;
+package com.pethistory.pet.controller;
 
 import java.util.List;
 
