@@ -47,6 +47,6 @@ public class VacunasMapperImple implements VacunasMapper {
             vacunas.getDosis(),
             vacunas.getDuracion(),
             vacunas.getEspecie().getId(),
-            vacunas.getEspecie().());
+            vacunas.getEspecie().getNomEspecie());
     }
 }
