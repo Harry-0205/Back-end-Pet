@@ -19,10 +19,10 @@ import lombok.Data;
 public class Raza {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long idRaza;
+    private long id;
     
     @Column(name = "nomRaza" , length = 11)
-    private String Raza;
+    private String raza;
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "especie" , foreignKey =  @ForeignKey(name = "FK_Id_Especie_1"))

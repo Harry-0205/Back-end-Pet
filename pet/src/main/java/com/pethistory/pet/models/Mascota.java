@@ -23,7 +23,7 @@ import lombok.NoArgsConstructor;
 public class Mascota {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long idMascota;
+    private long id;
     private String nombre;
     private Date fecNam;
     private String foto;
