@@ -24,7 +24,7 @@ public class VacunasMapperImple implements VacunasMapper {
         }
 
         Vacunas vacunas = new Vacunas();
-        vacunas.setIdVacuna(vacunasDto.getIdVacuna());
+        vacunas.setId(vacunasDto.getIdVacuna());
         vacunas.setVacuna(vacunasDto.getVacuna());
         vacunas.setCosto(vacunasDto.getCosto());
         vacunas.setDosis(vacunasDto.getDosis());

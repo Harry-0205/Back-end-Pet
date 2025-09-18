@@ -1,17 +1,13 @@
 package com.pethistory.pet.service;
 
-import java.security.PublicKey;
 import java.util.List;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
 
 import com.pethistory.pet.dtos.Dto_procedimiento_historiaclinica;
-import com.pethistory.pet.dtos.ProcedimientoDto;
 import com.pethistory.pet.mapper.ProcedimientoHiscliMapper;
 import com.pethistory.pet.models.ProHistoriaClinicaID;
-import com.pethistory.pet.models.Procedimiento;
 import com.pethistory.pet.models.ProcedimientoHistoriaclinica;
 import com.pethistory.pet.repositories.ProcedimientoHistoriaClinicaRepositories;
 
