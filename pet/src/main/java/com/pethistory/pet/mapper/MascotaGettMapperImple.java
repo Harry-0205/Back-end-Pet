@@ -3,6 +3,7 @@ package com.pethistory.pet.mapper;
 import org.springframework.stereotype.Component;
 
 import com.pethistory.pet.dtos.DtoMascota;
+import com.pethistory.pet.dtos.DtoMascotaAll;
 import com.pethistory.pet.models.Color;
 import com.pethistory.pet.models.Mascota;
 import com.pethistory.pet.models.Raza;
@@ -64,6 +65,25 @@ public Mascota toMascota(DtoMascota dtoMascota){
             mascota.getRaza().getId(),
             mascota.getRaza().getRaza()
         );
+    }
+    @Override
+    public DtoMascotaAll toDtoMascotaAll (Mascota mascota){
+        if(mascota == null){
+            return null;
+        }
+        return new DtoMascotaAll(
+            mascota.getId(),
+            mascota.getNombre(),
+            mascota.getFecNam(),
+            mascota.getFoto(),
+            mascota.getColor().getId(),
+            mascota.getColor().getNomColor(),
+            mascota.getUsuario().getDoc(),
+            mascota.getUsuario().getNom(),
+            mascota.getRaza().getId(),
+            mascota.getRaza().getRaza(),
+            mascota.getVivo()
 
+);
     }
 }
