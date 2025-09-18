@@ -25,6 +25,18 @@ public Veterinarias toVeterinarias(VeterinariasDto veterinariasDto){
 
     }
     @Override
-    public VeterinariasDto 
+    public VeterinariasDto toVeterinariasDto(Veterinarias veterinarias){
+        if (veterinarias==null) {
+            return null;
+            
+        }
+        return new VeterinariasDto(
+            veterinarias.getIdVet(),
+            veterinarias.getNom(),
+            veterinarias.getCorreo(),
+            veterinarias.getFoto(),
+            veterinarias.getDirec()
+        );
+    }
     
 }
