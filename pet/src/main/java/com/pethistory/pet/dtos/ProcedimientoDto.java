@@ -6,7 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.sql.Time;
+import java.sql.Date;
 
 
 @AllArgsConstructor
@@ -14,7 +14,6 @@ import java.sql.Time;
 @Data
 public class ProcedimientoDto {
 
-    
     private Long idProcedimiento;
 
     @NotNull
@@ -22,15 +21,13 @@ public class ProcedimientoDto {
     private String procedimiento;
 
     @NotNull
-    private String costo;
+    private Integer costo;
 
     @NotNull
-    private Time duracion;
+    private Date duracion;
 
     @NotNull
     @Size(max = 500)
     private String anotaciones;
-
-
 
 }

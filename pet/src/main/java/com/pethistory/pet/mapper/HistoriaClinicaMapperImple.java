@@ -25,7 +25,7 @@ public class HistoriaClinicaMapperImple implements HistoriaClinicaMapper{
             
         }
         HistoriaClinica hiscli = new HistoriaClinica();
-        hiscli.setIdHistoria(historiaClinicaDto.getId());
+        hiscli.setId(historiaClinicaDto.getId());
         hiscli.setAnotaciones(historiaClinicaDto.getAnot());
         hiscli.setFechaIni(historiaClinicaDto.getFechaI());
         
@@ -41,10 +41,10 @@ public class HistoriaClinicaMapperImple implements HistoriaClinicaMapper{
             return null;
         }
         return new HistoriaClinicaDto(
-            historiaClinica.getIdHistoria(),
+            historiaClinica.getId(),
             historiaClinica.getFechaIni(),
             historiaClinica.getAnotaciones(),
-            historiaClinica.getMascota().getIdMascota(),
+            historiaClinica.getMascota().getId(),
             historiaClinica.getMascota().getNombre()
         );
     }
