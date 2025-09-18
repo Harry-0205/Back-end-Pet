@@ -17,13 +17,10 @@ public class AgendamientoMapperImplement implements AgendamientoMapper{
     private final ProcedimientoRepositorio procedimientoRepositorio;
     private final VeterinariasRepositories veterinariasRepositories;
 
-    public AgendamientoMapperImplement(
-            ProcedimientoRepositorio procedimientoRepositorio,
-            VeterinariasRepositories veterinariasRepositories) {
+    public AgendamientoMapperImplement(ProcedimientoRepositorio procedimientoRepositorio, VeterinariasRepositories veterinariasRepositories) {
         this.procedimientoRepositorio = procedimientoRepositorio;
         this.veterinariasRepositories= veterinariasRepositories;
     }
-
 
     @Override
     public Agendamiento toAgendamiento(AgendamientoDto agendamientoDto) {
