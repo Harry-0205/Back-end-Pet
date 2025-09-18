@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 
 import com.pethistory.pet.dtos.RazaDto;
 import com.pethistory.pet.mapper.RazaMapper;
-import com.pethistory.pet.models.Raza;
 import com.pethistory.pet.repositories.RazaRepo;
 
 import jakarta.persistence.EntityNotFoundException;
@@ -22,12 +21,7 @@ public class RazaServiceImple implements RazaService{
         this.razaRepo = razaRepo;
         this.razaMap = razaMap;
     }
-    @Override
-    public RazaDto crear(RazaDto razaDto){
-        Raza raza = razaMap.toRaza(razaDto);
-        Raza guardado = razaRepo.save(raza);
-        return razaMap.toRazaDto(guardado);
-    }
+  
     @Override
         public RazaDto buscarIdAll(Long id){
             return razaRepo.findById(id).map(razaMap::toRazaDto).orElseThrow(()-> new EntityNotFoundException("Raza no encontrada"));

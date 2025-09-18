@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 
 import com.pethistory.pet.dtos.EspecieDto;
 import com.pethistory.pet.mapper.EspecieMapper;
-import com.pethistory.pet.models.Especie;
 import com.pethistory.pet.repositories.EspecieRepositorio;
 
 import jakarta.persistence.EntityNotFoundException;
@@ -22,12 +21,7 @@ public class EspecieServiceImple implements EspecieService {
         this.especieRepo = especieRepo;
         this.especieMap = especieMap;
     }
-    @Override
-    public EspecieDto crear(EspecieDto especieDto){
-        Especie especie = especieMap.toEspecie(especieDto);
-        Especie guardado = especieRepo.save(especie);
-        return especieMap.toEspecieDto(guardado);
-    }
+    
     @Override
         public EspecieDto buscarIdAll(Long id){
             return especieRepo.findById(id).map(especieMap::toEspecieDto).orElseThrow(()-> new EntityNotFoundException("Especie no encontrada"));
