@@ -22,7 +22,7 @@ import lombok.NoArgsConstructor;
 public class HistoriaClinica {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long idHistoria;
     private Date fechaIni;
     private String anotaciones;
 

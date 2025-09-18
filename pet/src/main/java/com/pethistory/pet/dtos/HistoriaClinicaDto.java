@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 
 public class HistoriaClinicaDto {
     @NotNull
-    private Long idHist;
+    private Long id;
     @NotNull
     private Date fechaI;
     @NotNull
