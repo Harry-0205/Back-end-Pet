@@ -29,5 +29,5 @@ public class EspecieServiceImple implements EspecieService {
     @Override
         public List<EspecieDto> listarTodos(){
             return especieRepo.findAll().stream().map(especieMap::toEspecieDto).collect(Collectors.toList());
-        }
+    }
 }
