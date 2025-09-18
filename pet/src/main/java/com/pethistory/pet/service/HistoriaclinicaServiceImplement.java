@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
+import org.springframework.stereotype.Service;
+
 import com.pethistory.pet.dtos.DtoMascota;
 import com.pethistory.pet.dtos.HistoriaClinicaDto;
 import com.pethistory.pet.mapper.HistoriaClinicaMapper;
@@ -13,7 +15,7 @@ import com.pethistory.pet.repositories.HistoriaClinicaRepositories;
 import com.pethistory.pet.repositories.MascotaRepo;
 
 import jakarta.persistence.EntityNotFoundException;
-
+@Service
 public class HistoriaclinicaServiceImplement implements HistoriaclinicaService{
     private final HistoriaClinicaRepositories hiclirep;
     private final HistoriaClinicaMapper hiclimapp;
@@ -52,10 +54,5 @@ public class HistoriaclinicaServiceImplement implements HistoriaclinicaService{
 
         HistoriaClinica actualizada = hiclirep.save(historiaClinica);
         return hiclimapp.toHistoriaClinicaDto(actualizada);
-
-        
     }
-
-    
-
 }
