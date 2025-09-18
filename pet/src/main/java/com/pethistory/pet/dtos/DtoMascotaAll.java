@@ -2,16 +2,18 @@ package com.pethistory.pet.dtos;
 
 import java.sql.Date;
 
+import jakarta.persistence.Entity;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@AllArgsConstructor
-@NoArgsConstructor
 @Data
-public class DtoMascota {
+@Entity
+@NoArgsConstructor
+@AllArgsConstructor
+public class DtoMascotaAll {
     @NotNull
     private Long idMasc;
 
@@ -25,7 +27,7 @@ public class DtoMascota {
     @NotNull
     @Size(min = 3, max = 255)
     private String foto;
- 
+
     @NotNull
     private long idColor;
 
@@ -37,12 +39,11 @@ public class DtoMascota {
     private String nomUsu;
 
     @NotNull
-    private long idRaza;
+    private Long idRaza;
 
     private String nomRaza;
 
-    
+    @NotNull
+    private Boolean vivo;
+
 }
-
-
-
