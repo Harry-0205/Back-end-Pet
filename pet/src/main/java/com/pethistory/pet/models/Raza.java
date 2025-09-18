@@ -19,7 +19,7 @@ import lombok.Data;
 public class Raza {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long idRaza;
+    private long id;
     
     @Column(name = "nomRaza" , length = 11)
     private String raza;

@@ -9,7 +9,6 @@ import com.pethistory.pet.models.Procedimiento;
 import com.pethistory.pet.models.ProcedimientoHistoriaclinica;
 import com.pethistory.pet.models.Usuario;
 import com.pethistory.pet.repositories.HistoriaClinicaRepositories;
-import com.pethistory.pet.repositories.ProcedimientoHistoriaClinicaRepositories;
 import com.pethistory.pet.repositories.ProcedimientoRepositorio;
 import com.pethistory.pet.repositories.UsuarioRepo;
 

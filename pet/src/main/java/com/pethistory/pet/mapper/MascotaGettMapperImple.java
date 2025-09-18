@@ -31,7 +31,7 @@ public Mascota toMascota(DtoMascota dtoMascota){
     return null;
     }
     Mascota mascota = new Mascota();
-    mascota.setIdMascota(dtoMascota.getIdMasc());
+    mascota.setId(dtoMascota.getIdMasc());
     mascota.setNombre(dtoMascota.getNom());
     mascota.setFecNam(dtoMascota.getFecNam());
     mascota.setFoto(dtoMascota.getFoto());
@@ -53,15 +53,15 @@ public Mascota toMascota(DtoMascota dtoMascota){
             return null;
         }
         return new DtoMascota(
-            mascota.getIdMascota(),
+            mascota.getId(),
             mascota.getNombre(),
             mascota.getFecNam(),
             mascota.getFoto(),
-            mascota.getColor().getIdColor(),
+            mascota.getColor().getId(),
             mascota.getColor().getNomColor(),
             mascota.getUsuario().getDoc(),
             mascota.getUsuario().getNom(),
-            mascota.getRaza().getIdRaza(),
+            mascota.getRaza().getId(),
             mascota.getRaza().getRaza()
         );
 
