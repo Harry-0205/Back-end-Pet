@@ -1,5 +1,7 @@
 package com.pethistory.pet.mapper;
 
+import org.springframework.stereotype.Component;
+
 import com.pethistory.pet.dtos.RazaDto;
 import com.pethistory.pet.models.Especie;
 import com.pethistory.pet.models.Raza;
@@ -7,6 +9,7 @@ import com.pethistory.pet.repositories.EspecieRepositorio;
 
 import jakarta.persistence.EntityNotFoundException;
 
+@Component
 public class RazaMapperImple implements RazaMapper {
 
     private final EspecieRepositorio especieRepo;
