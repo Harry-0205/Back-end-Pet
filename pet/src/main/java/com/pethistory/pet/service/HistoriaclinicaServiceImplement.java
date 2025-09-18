@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
+import org.springframework.stereotype.Service;
+
 import com.pethistory.pet.dtos.DtoMascota;
 import com.pethistory.pet.dtos.HistoriaClinicaDto;
 import com.pethistory.pet.mapper.HistoriaClinicaMapper;

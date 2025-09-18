@@ -1,5 +1,7 @@
 package com.pethistory.pet.controller;
 
+import java.util.List;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -27,6 +29,15 @@ public class VacunasController {
         return ResponseEntity.ok(vacunasDto);
     }
     
+    @GetMapping
+    public ResponseEntity<List<VacunasDto>> getAll(){
+        return ResponseEntity.ok(vacuSer.listarTodos());
+    }
+}
+    
     
 
-}
+    
+    
+
+
