@@ -1,7 +1,6 @@
 package com.pethistory.pet.dtos;
 
 
-import jakarta.persistence.Entity;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;

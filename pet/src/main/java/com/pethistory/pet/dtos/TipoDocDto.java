@@ -1,15 +1,17 @@
 package com.pethistory.pet.dtos;
 
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
-import lombok.Getter;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
-public class DtoTipoDocGett {
+@Data
+public class TipoDocDto {
 
-    private Integer idTipo;
+    private Long idTipo;
+    @NotNull
     private String tipoDoc;
 }
 
