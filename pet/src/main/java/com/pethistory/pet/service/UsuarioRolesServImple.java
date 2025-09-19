@@ -1,5 +1,6 @@
 package com.pethistory.pet.service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -38,5 +39,23 @@ public class UsuarioRolesServImple implements UsuarioRolesServ {
         return usuRolRepo.findByRol_id(idRol).stream()
         .map(usuRolMapper::toUsuarioRolesDto)
         .collect(Collectors.toList());
+    }
+    @Override
+    public List<UsuarioRolesDto> asignarVarios(List<UsuarioRolesDto> lista ){
+
+        List<UsuarioRolesDto> lis = new ArrayList<>();
+
+        for(UsuarioRolesDto dto : lista){
+
+            try{
+                UsuarioRolesDto asignado = crear(dto);
+                lis.add(asignado);
+            }
+            catch (Exception e){
+                System.out.println("Error al asignar rol");
+            }
+            
+        }
+        return lis;
     }
 }

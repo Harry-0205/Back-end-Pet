@@ -32,6 +32,11 @@ public class UsuarioRolController {
         UsuarioRolesDto usu = usuRolSer.crear(dto);       
         return ResponseEntity.ok(usu);
     }
+    @PostMapping("/crearVarios")
+    public ResponseEntity<List<UsuarioRolesDto>> varios(@RequestBody List<UsuarioRolesDto> asignaciones){
+        List<UsuarioRolesDto> usuList = usuRolSer.asignarVarios(asignaciones);
+        return ResponseEntity.ok(usuList);
+    }
     
     @GetMapping("/usuario/{id}")
     public ResponseEntity<List<UsuarioRolesDto>> getUsuario(@PathVariable Long id) {
