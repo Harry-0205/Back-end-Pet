@@ -60,7 +60,7 @@ public Mascota toMascota(DtoMascota dtoMascota){
             mascota.getFoto(),
             mascota.getColor().getId(),
             mascota.getColor().getNomColor(),
-            mascota.getUsuario().getDoc(),
+            mascota.getUsuario().getId(),
             mascota.getUsuario().getNom(),
             mascota.getRaza().getId(),
             mascota.getRaza().getRaza()
@@ -78,7 +78,7 @@ public Mascota toMascota(DtoMascota dtoMascota){
             mascota.getFoto(),
             mascota.getColor().getId(),
             mascota.getColor().getNomColor(),
-            mascota.getUsuario().getDoc(),
+            mascota.getUsuario().getId(),
             mascota.getUsuario().getNom(),
             mascota.getRaza().getId(),
             mascota.getRaza().getRaza(),

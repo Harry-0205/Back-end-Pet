@@ -48,9 +48,9 @@ public class UsuarioRolesMapperImple implements UsuarioRolesMapper{
     @Override
     public UsuarioRolesDto toUsuarioRolesDto(UsuarioRoles usuRol){
         return new UsuarioRolesDto(
-            usuRol.getUsuario().getDoc(),
+            usuRol.getUsuario().getId(),
             usuRol.getUsuario().getNom(),
-            usuRol.getRol().getIdRol(),
+            usuRol.getRol().getId(),
             usuRol.getRol().getNomRol(),
             usuRol.getVeterinarias().getIdVet(),
             usuRol.getVeterinarias().getNom()

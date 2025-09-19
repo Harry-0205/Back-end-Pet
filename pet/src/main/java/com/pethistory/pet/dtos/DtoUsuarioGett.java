@@ -26,7 +26,7 @@ public class DtoUsuarioGett {
 
     private Date fechaNac;
 
-    private Integer tipdoc;
+    private Long tipdoc;
 
     private String nomTipoDoc;
 

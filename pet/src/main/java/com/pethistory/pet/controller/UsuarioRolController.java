@@ -29,7 +29,7 @@ public class UsuarioRolController {
 
     @PostMapping("/crear")
     public ResponseEntity<UsuarioRolesDto> asignar(@Valid@RequestBody UsuarioRolesDto dto){
-        UsuarioRolesDto usu = usuRolSer.crear(dto);        
+        UsuarioRolesDto usu = usuRolSer.crear(dto);       
         return ResponseEntity.ok(usu);
     }
     
