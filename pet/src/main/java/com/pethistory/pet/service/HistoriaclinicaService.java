@@ -8,5 +8,5 @@ public interface HistoriaclinicaService {
     HistoriaClinicaDto crear (HistoriaClinicaDto historiaClinicaDto);
     HistoriaClinicaDto buscarId(Long id);
     List<HistoriaClinicaDto> todaslasHis();
-    HistoriaClinicaDto actualizar(Long id, HistoriaClinicaDto historiaClinicaDto);
+    HistoriaClinicaDto actualizar( HistoriaClinicaDto historiaClinicaDto);
 }

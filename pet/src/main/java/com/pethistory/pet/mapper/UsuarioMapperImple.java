@@ -3,6 +3,7 @@ package com.pethistory.pet.mapper;
 import org.springframework.stereotype.Component;
 
 import com.pethistory.pet.dtos.DtoUsuario;
+import com.pethistory.pet.dtos.DtoUsuarioGett;
 import com.pethistory.pet.models.Cuenta;
 import com.pethistory.pet.models.TipoDoc;
 import com.pethistory.pet.models.Usuario;
@@ -65,6 +66,23 @@ public class UsuarioMapperImple implements UsuarioMapper{
             usuario.getCuenta().getCorreo(),
             usuario.getCuenta().getContra());
     }
-
+    @Override
+    public DtoUsuarioGett toDtoUsuarioGett(Usuario usuario){
+        if (usuario == null) {
+            return null;
+        }
+        return new DtoUsuarioGett(
+            usuario.getDoc(),
+            usuario.getNom(),
+            usuario.getApe1(),
+            usuario.getApe2(),
+            usuario.getTel(),
+            usuario.getContrato(),
+            usuario.getDir(),
+            usuario.getFecNac(),
+            usuario.getTipoDoc().getIdTipo(),
+            usuario.getTipoDoc().getTipoDoc(),
+            usuario.getCuenta().getCorreo());
+    }
     
 }

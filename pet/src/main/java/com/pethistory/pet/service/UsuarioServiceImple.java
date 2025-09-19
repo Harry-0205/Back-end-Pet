@@ -3,6 +3,7 @@ package com.pethistory.pet.service;
 import org.springframework.stereotype.Service;
 
 import com.pethistory.pet.dtos.DtoUsuario;
+import com.pethistory.pet.dtos.DtoUsuarioGett;
 import com.pethistory.pet.mapper.UsuarioMapper;
 import com.pethistory.pet.models.Usuario;
 import com.pethistory.pet.repositories.UsuarioRepo;
@@ -29,5 +30,9 @@ public class UsuarioServiceImple implements UsuarioService {
     @Override
     public DtoUsuario buscarIdAll(Long id){
         return usuRepo.findById(id).map(usuMap::toDtoUsuario).orElseThrow(()-> new EntityNotFoundException("Usuario no encontrado"));
+    }
+    @Override
+    public DtoUsuarioGett buscarId(Long id){
+        return usuRepo.findById(id).map(usuMap::toDtoUsuarioGett).orElseThrow(()-> new EntityNotFoundException("Usuario no encontrado"));
     }
 }

@@ -3,6 +3,7 @@ package com.pethistory.pet.service;
 import org.springframework.stereotype.Service;
 
 import com.pethistory.pet.dtos.DtoMascota;
+import com.pethistory.pet.dtos.DtoMascotaAll;
 import com.pethistory.pet.mapper.MascotaGettMapper;
 import com.pethistory.pet.models.Mascota;
 import com.pethistory.pet.repositories.MascotaRepo;
@@ -30,6 +31,11 @@ public class MascotaServiceImple implements MascotaService {
     @Override
     public DtoMascota buscarIdAll(Long id){
         return mascRepo.findById(id).map(mascMap::toDtoMascota).orElseThrow(()-> new EntityNotFoundException("Mascota no encontrada"));
+    }
+
+    @Override
+    public DtoMascotaAll buscarId(Long id){
+        return mascRepo.findById(id).map(mascMap::toDtoMascotaAll).orElseThrow(()-> new EntityNotFoundException("Mascota no encontrada"));
     }
 }
 

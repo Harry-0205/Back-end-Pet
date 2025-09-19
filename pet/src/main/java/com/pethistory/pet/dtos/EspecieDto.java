@@ -1,7 +1,5 @@
 package com.pethistory.pet.dtos;
 
-
-import jakarta.persistence.Entity;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -10,10 +8,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class ColorDto {
+public class EspecieDto {
 
-    private Long idColor;
+    private Long idEspecie;
     @NotNull
-    private String nomColor;
-
+    private String nomEspecie;
 }

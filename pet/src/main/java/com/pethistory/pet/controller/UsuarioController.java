@@ -5,7 +5,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.pethistory.pet.dtos.DtoUsuario;
 import com.pethistory.pet.dtos.DtoUsuarioGett;
-import com.pethistory.pet.service.UsuarioGettService;
 import com.pethistory.pet.service.UsuarioService;
 
 import jakarta.validation.Valid;
@@ -22,16 +21,14 @@ import org.springframework.web.bind.annotation.RequestBody;
 @RequestMapping("/api/Usuario")
 public class UsuarioController {
     private UsuarioService usuSer;
-    private UsuarioGettService usuGett;
 
-    public UsuarioController( UsuarioService usuSer, UsuarioGettService usuGett){
+    public UsuarioController( UsuarioService usuSer){
         this.usuSer=usuSer;
-        this.usuGett=usuGett;
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<DtoUsuarioGett> getUsu(@PathVariable Long id) {
-        DtoUsuarioGett usu = usuGett.buscarId(id);
+        DtoUsuarioGett usu = usuSer.buscarId(id);
         return ResponseEntity.ok(usu);
     }
     @GetMapping("All/{id}")
