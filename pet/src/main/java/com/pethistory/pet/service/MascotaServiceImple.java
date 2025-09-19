@@ -4,6 +4,7 @@ import org.springframework.stereotype.Service;
 
 import com.pethistory.pet.dtos.DtoMascota;
 import com.pethistory.pet.dtos.DtoMascotaAll;
+import com.pethistory.pet.dtos.MascotaCreateDto;
 import com.pethistory.pet.dtos.MascotaUpdateDto;
 import com.pethistory.pet.mapper.MascotaGettMapper;
 import com.pethistory.pet.models.Mascota;
@@ -54,6 +55,14 @@ public class MascotaServiceImple implements MascotaService {
         Mascota actualizado = mascRepo.save(mascota);
         return mascMap.toDtoMascota(actualizado);
         
+    }
+
+    @Override
+    @Transactional
+    public DtoMascota guardar (MascotaCreateDto dto){
+    Mascota mascota = mascMap.toMascotaCreate(dto);
+    Mascota guardado =mascRepo.save(mascota);
+    return mascMap.toDtoMascota(guardado);
     }
 }
 
