@@ -15,5 +15,6 @@ public class RazaDto {
     private String raza;
     @NotNull
     private Long idEspecie;
+    private String nomEspecie;
 
 }

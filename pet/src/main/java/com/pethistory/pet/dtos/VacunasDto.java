@@ -16,13 +16,13 @@ public class VacunasDto {
     private String vacuna;
     @NotNull
     private Long costo;
-    
+
     @NotNull
     @Size(min = 3, max = 255)
     private String dosis;
-
     @NotNull
     private String duracion;
+    @NotNull
     private Long idEspecie;
-    private String especie;
+    private String nomEspecie;
 }
