@@ -25,7 +25,7 @@ import lombok.NoArgsConstructor;
 public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long doc;
+    private Long id;
     private String nom;
     private String ape1;
     private String ape2;
