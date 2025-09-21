@@ -7,10 +7,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
-public class ColorDto {
+public class RolDto {
 
-    private Long idColor;
-
-    private String nomColor;
-
+    private String rol;
 }
