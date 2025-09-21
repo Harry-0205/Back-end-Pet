@@ -29,7 +29,7 @@ public class UsuarioMapperImple implements UsuarioMapper{
             return null;
         }
         Usuario usuario = new Usuario();
-        usuario.setDoc(dtoUsuario.getNumDoc());
+        usuario.setId(dtoUsuario.getNumDoc());
         usuario.setNom(dtoUsuario.getNombre());
         usuario.setApe1(dtoUsuario.getApeUno());
         usuario.setApe2(dtoUsuario.getApeDos());
@@ -53,7 +53,7 @@ public class UsuarioMapperImple implements UsuarioMapper{
             return null;
         }
         return new DtoUsuario(
-            usuario.getDoc(),
+            usuario.getId(),
             usuario.getNom(),
             usuario.getApe1(),
             usuario.getApe2(),
@@ -72,7 +72,7 @@ public class UsuarioMapperImple implements UsuarioMapper{
             return null;
         }
         return new DtoUsuarioGett(
-            usuario.getDoc(),
+            usuario.getId(),
             usuario.getNom(),
             usuario.getApe1(),
             usuario.getApe2(),

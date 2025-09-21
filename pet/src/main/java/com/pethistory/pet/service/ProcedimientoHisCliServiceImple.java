@@ -22,7 +22,6 @@ public class ProcedimientoHisCliServiceImple implements ProcedimientoHisCliServi
         this.proHisCliRepo=proHisCliRepo;
         this.proHisCliMap=proHisCliMap;
     }
-
     @Override
     public Dto_procedimiento_historiaclinica crear(Dto_procedimiento_historiaclinica dtoprohiscli){
         ProcedimientoHistoriaclinica prohiscli=proHisCliMap.toProcedimientoHistoriaclinica(dtoprohiscli);
@@ -35,7 +34,6 @@ public class ProcedimientoHisCliServiceImple implements ProcedimientoHisCliServi
         ProcedimientoHistoriaclinica guardado= proHisCliRepo.save(prohiscli);
         return proHisCliMap.toDto_procedimiento_historiaclinica(guardado);
     }
-
     @Override
     public List<Dto_procedimiento_historiaclinica>listarPorProcedimiento(Long procediId){
         return proHisCliRepo.findByProcedimiento_id(procediId)
@@ -43,9 +41,6 @@ public class ProcedimientoHisCliServiceImple implements ProcedimientoHisCliServi
         .map(proHisCliMap::toDto_procedimiento_historiaclinica)
         .collect(Collectors.toList());
     }
-
-
-
     @Override
     public List<Dto_procedimiento_historiaclinica>listarPorHistoria(Long idHistoria){
         return proHisCliRepo.findByHistoriaClinica_id(idHistoria)

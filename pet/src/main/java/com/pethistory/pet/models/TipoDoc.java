@@ -5,13 +5,13 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import lombok.Getter;
+import lombok.Data;
 
-@Getter
+@Data
 @Entity
 public class TipoDoc {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer idTipo;
+    private Long idTipo;
     private String tipoDoc;
 }

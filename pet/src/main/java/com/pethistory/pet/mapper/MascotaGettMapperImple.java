@@ -4,6 +4,7 @@ import org.springframework.stereotype.Component;
 
 import com.pethistory.pet.dtos.DtoMascota;
 import com.pethistory.pet.dtos.DtoMascotaAll;
+import com.pethistory.pet.dtos.MascotaCreateDto;
 import com.pethistory.pet.models.Color;
 import com.pethistory.pet.models.Mascota;
 import com.pethistory.pet.models.Raza;
@@ -60,7 +61,7 @@ public Mascota toMascota(DtoMascota dtoMascota){
             mascota.getFoto(),
             mascota.getColor().getId(),
             mascota.getColor().getNomColor(),
-            mascota.getUsuario().getDoc(),
+            mascota.getUsuario().getId(),
             mascota.getUsuario().getNom(),
             mascota.getRaza().getId(),
             mascota.getRaza().getRaza()
@@ -78,12 +79,38 @@ public Mascota toMascota(DtoMascota dtoMascota){
             mascota.getFoto(),
             mascota.getColor().getId(),
             mascota.getColor().getNomColor(),
-            mascota.getUsuario().getDoc(),
+            mascota.getUsuario().getId(),
             mascota.getUsuario().getNom(),
             mascota.getRaza().getId(),
             mascota.getRaza().getRaza(),
             mascota.getVivo()
 
 );
+    }
+
+
+    @Override
+    public Mascota toMascotaCreate(MascotaCreateDto dto){
+    if(dto == null){
+        return null;
+
+    }
+    
+    Mascota mascota = new Mascota();
+
+    mascota.setNombre(dto.getNombre());
+     mascota.setFecNam(dto.getFecNam());
+    mascota.setFoto(dto.getFoto());
+
+    Color col = colorRepo.findByNomColor(dto.getColor());
+    mascota.setColor(col);
+    
+    Usuario us =  usuarioDoc.findById(dto.getUsuarioDoc()).orElseThrow(()-> new EntityNotFoundException("Usuario no encontrado"));
+    mascota.setUsuario(us);
+
+    Raza raza = razaRepo.findbyRaza(dto.getRaza());
+    mascota.setRaza(raza);
+
+        return mascota;
     }
 }
