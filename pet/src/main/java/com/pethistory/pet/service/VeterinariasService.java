@@ -4,7 +4,7 @@ import com.pethistory.pet.dtos.VeterinariasDto;
 
 public interface VeterinariasService {
     VeterinariasDto crear(VeterinariasDto veterinariasDto);
-    VeterinariasDto niit(VeterinariasDto veterinariasDto);
-    VeterinariasDto Cambiar(VeterinariasDto veterinariasDto);
+    VeterinariasDto niit(Long id);
+    VeterinariasDto cambiar(VeterinariasDto veterinariasDto);
 
 }
