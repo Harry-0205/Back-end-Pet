@@ -61,7 +61,7 @@ public class ProcedimientoHiscliMapperImple implements ProcedimientoHiscliMapper
             proHisCli.getHistoriaClinica().getId(),
             proHisCli.getProcedimiento().getId(),
             proHisCli.getAnotaciones(),
-            proHisCli.getUsuario().getDoc(),
+            proHisCli.getUsuario().getId(),
             proHisCli.getUsuario().getNom()
         );
     }

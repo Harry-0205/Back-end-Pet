@@ -39,7 +39,7 @@ public class DtoUsuario {
     private Date fechaNac;
 
     @NotNull
-    private Integer tipdoc;
+    private Long tipdoc;
 
     @NotNull
     private String nomTipoDoc;
