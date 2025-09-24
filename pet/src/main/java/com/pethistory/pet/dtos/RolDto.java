@@ -1,13 +1,9 @@
 package com.pethistory.pet.dtos;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.Data;
 
-@NoArgsConstructor
-@AllArgsConstructor
-@Getter
+@Data
 public class RolDto {
-
+    private Long idRol;
     private String rol;
 }

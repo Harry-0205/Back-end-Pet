@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.pethistory.pet.dtos.VacunasDto;
-import com.pethistory.pet.service.VacunasService;
 
 
 
@@ -17,22 +16,8 @@ import com.pethistory.pet.service.VacunasService;
 @RequestMapping("/api/vacunas")
 public class VacunasController {
 
-    private VacunasService vacuSer;
-
-    public VacunasController (VacunasService vacuSer){
-        this.vacuSer=vacuSer;
-    }
-
-    @GetMapping("/{id}")
-    public ResponseEntity<VacunasDto> getVacuAll (@PathVariable Long id){
-        VacunasDto vacunasDto= vacuSer.buscarIdAll(id);
-        return ResponseEntity.ok(vacunasDto);
-    }
     
-    @GetMapping
-    public ResponseEntity<List<VacunasDto>> getAll(){
-        return ResponseEntity.ok(vacuSer.listarTodos());
-    }
+
 }
     
     
