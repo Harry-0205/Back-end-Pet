@@ -4,7 +4,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.pethistory.pet.dtos.UsuarioRolesDto;
-import com.pethistory.pet.models.UsuarioRoles;
 import com.pethistory.pet.service.UsuarioRolesServ;
 
 import jakarta.validation.Valid;
