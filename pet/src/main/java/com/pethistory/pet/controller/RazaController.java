@@ -21,7 +21,7 @@ public class RazaController {
         return razaRepo.findAll().stream().map(raza -> {
             RazaDto dto = new RazaDto();
             dto.setIdRaza(raza.getId());
-            dto.setNomEspecie(raza.getRaza());
+            dto.setNomRaza(raza.getRaza());
             dto.setIdEspecie(raza.getEspecie().getId());
             dto.setNomEspecie(raza.getEspecie().getNomEspecie());
             return dto;

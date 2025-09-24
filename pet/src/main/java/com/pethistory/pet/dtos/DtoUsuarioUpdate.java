@@ -3,7 +3,7 @@ package com.pethistory.pet.dtos;
 import lombok.Data;
 
 @Data
-public class DtoUsuarioGett {
+public class DtoUsuarioUpdate {
     private Long numDoc;
 
     private String nombre;
@@ -11,10 +11,8 @@ public class DtoUsuarioGett {
     private String apeUno;
 
     private String apeDos;
-
+    
     private Long telefono;
 
-    private Long numContra;
-
-    private String correo;
+    private String direccion;
 }

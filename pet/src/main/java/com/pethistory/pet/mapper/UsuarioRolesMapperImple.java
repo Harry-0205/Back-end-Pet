@@ -1,5 +1,9 @@
 package com.pethistory.pet.mapper;
 
+import org.springframework.stereotype.Component;
+
+import com.pethistory.pet.dtos.DtoUsuario;
+import com.pethistory.pet.dtos.DtoUsuarioAsignacionVet;
 import com.pethistory.pet.dtos.UsuarioRolesDto;
 import com.pethistory.pet.models.Rol;
 import com.pethistory.pet.models.Usuario;
@@ -12,6 +16,7 @@ import com.pethistory.pet.repositories.VeterinariasRepositories;
 
 import jakarta.persistence.EntityNotFoundException;
 
+@Component
 public class UsuarioRolesMapperImple implements UsuarioRolesMapper{
 
     private final UsuarioRepo usuRepo;
@@ -55,5 +60,15 @@ public class UsuarioRolesMapperImple implements UsuarioRolesMapper{
             usuRol.getVeterinarias().getIdVet(),
             usuRol.getVeterinarias().getNom()
         );
+    }
+    @Override
+    public DtoUsuarioAsignacionVet toAsignacion(UsuarioRoles entity){
+        DtoUsuarioAsignacionVet dto = new DtoUsuarioAsignacionVet();
+        dto.setDoc(entity.getUsuario().getId());
+        dto.setNombreUsu(entity.getUsuario().getNom());
+        dto.setNumContra(entity.getUsuario().getContrato());
+        dto.setIdVet(entity.getVeterinarias().getIdVet());
+        dto.setNomVet(entity.getVeterinarias().getNom());
+        return dto;
     }
 }

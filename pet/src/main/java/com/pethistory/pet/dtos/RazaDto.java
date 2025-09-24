@@ -8,7 +8,7 @@ public class RazaDto {
 
     @NotNull
     private Long idRaza;
-    private String raza;
+    private String nomRaza;
     
     @NotNull
     private Long idEspecie;

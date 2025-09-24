@@ -21,7 +21,7 @@ public class Raza {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     
-    @Column(name = "nomRaza" , length = 11)
+    @Column(name = "nomRaza" , length = 50)
     private String raza;
 
     @ManyToOne(optional = false)
