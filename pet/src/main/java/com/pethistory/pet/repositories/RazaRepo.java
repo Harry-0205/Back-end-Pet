@@ -8,5 +8,5 @@ import com.pethistory.pet.models.Raza;
 
 @Repository
 public interface RazaRepo extends JpaRepository <Raza, Long>{
-Raza findbyRaza(String Raza);
+    Raza findByRaza(String raza);
 }

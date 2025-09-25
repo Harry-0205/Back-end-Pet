@@ -2,33 +2,30 @@ package com.pethistory.pet.controller;
 
 import java.util.List;
 
-import org.springframework.http.ResponseEntity;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.pethistory.pet.dtos.RazaDto;
-import com.pethistory.pet.service.RazaService;
+import com.pethistory.pet.repositories.RazaRepo;
 
 @RestController
 @RequestMapping("/api/raza")
 public class RazaController {
 
-    private RazaService razaSer;
-
-    public RazaController (RazaService razaSer){
-        this.razaSer=razaSer;
-    }
-
-    @GetMapping("/{id}")
-    public ResponseEntity<RazaDto> getRazAll(@PathVariable Long id){
-        RazaDto razaDto= razaSer.buscarIdAll(id);
-        return ResponseEntity.ok(razaDto);
-    }
-
+    @Autowired
+    private RazaRepo razaRepo;
     @GetMapping
-    public ResponseEntity<List<RazaDto>> getAll(){
-        return ResponseEntity.ok(razaSer.listarTodos());
+    public List<RazaDto> getAllRazas() {
+        return razaRepo.findAll().stream().map(raza -> {
+            RazaDto dto = new RazaDto();
+            dto.setIdRaza(raza.getId());
+            dto.setNomRaza(raza.getRaza());
+            dto.setIdEspecie(raza.getEspecie().getId());
+            dto.setNomEspecie(raza.getEspecie().getNomEspecie());
+            return dto;
+        }).toList();
     }
+
 }

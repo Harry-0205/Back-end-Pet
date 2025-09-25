@@ -14,6 +14,7 @@ public class UsuarioRolesDto {
 
     private String nomUsuario;
 
+
     @NotNull(message = "Rol no encontrado")
     private Long idRol;
 

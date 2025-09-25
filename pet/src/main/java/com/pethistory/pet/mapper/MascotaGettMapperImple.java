@@ -108,7 +108,7 @@ public Mascota toMascota(DtoMascota dtoMascota){
     Usuario us =  usuarioDoc.findById(dto.getUsuarioDoc()).orElseThrow(()-> new EntityNotFoundException("Usuario no encontrado"));
     mascota.setUsuario(us);
 
-    Raza raza = razaRepo.findbyRaza(dto.getRaza());
+    Raza raza = razaRepo.findByRaza(dto.getRaza());
     mascota.setRaza(raza);
 
         return mascota;

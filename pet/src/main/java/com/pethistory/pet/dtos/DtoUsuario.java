@@ -41,7 +41,6 @@ public class DtoUsuario {
     @NotNull
     private Long tipdoc;
 
-    @NotNull
     private String nomTipoDoc;
 
     @NotNull

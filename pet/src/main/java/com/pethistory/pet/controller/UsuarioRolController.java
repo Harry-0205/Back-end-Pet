@@ -3,8 +3,8 @@ package com.pethistory.pet.controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.pethistory.pet.dtos.DtoRespUsuAsigVet;
 import com.pethistory.pet.dtos.UsuarioRolesDto;
-import com.pethistory.pet.models.UsuarioRoles;
 import com.pethistory.pet.service.UsuarioRolesServ;
 
 import jakarta.validation.Valid;
@@ -33,8 +33,8 @@ public class UsuarioRolController {
         return ResponseEntity.ok(usu);
     }
     @PostMapping("/crearVarios")
-    public ResponseEntity<List<UsuarioRolesDto>> varios(@RequestBody List<UsuarioRolesDto> asignaciones){
-        List<UsuarioRolesDto> usuList = usuRolSer.asignarVarios(asignaciones);
+    public ResponseEntity<DtoRespUsuAsigVet> varios(@RequestBody List<UsuarioRolesDto> asignaciones){
+        DtoRespUsuAsigVet usuList = usuRolSer.asignarVarios(asignaciones);
         return ResponseEntity.ok(usuList);
     }
     
