@@ -71,18 +71,15 @@ public class UsuarioMapperImple implements UsuarioMapper{
         if (usuario == null) {
             return null;
         }
-        return new DtoUsuarioGett(
-            usuario.getId(),
-            usuario.getNom(),
-            usuario.getApe1(),
-            usuario.getApe2(),
-            usuario.getTel(),
-            usuario.getContrato(),
-            usuario.getDir(),
-            usuario.getFecNac(),
-            usuario.getTipoDoc().getIdTipo(),
-            usuario.getTipoDoc().getTipoDoc(),
-            usuario.getCuenta().getCorreo());
+        DtoUsuarioGett dtoUsuarioGett = new DtoUsuarioGett();
+        dtoUsuarioGett.setNumDoc(usuario.getId());
+        dtoUsuarioGett.setNombre(usuario.getNom());
+        dtoUsuarioGett.setApeUno(usuario.getApe1());
+        dtoUsuarioGett.setApeDos(usuario.getApe2());
+        dtoUsuarioGett.setTelefono(usuario.getTel());
+        dtoUsuarioGett.setNumContra(usuario.getContrato());
+        dtoUsuarioGett.setCorreo(usuario.getCuenta().getCorreo());
+        return dtoUsuarioGett;
     }
     
 }

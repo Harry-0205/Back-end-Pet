@@ -2,30 +2,27 @@ package com.pethistory.pet.controller;
 
 import java.util.List;
 
-import org.springframework.http.ResponseEntity;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.pethistory.pet.dtos.EspecieDto;
-import com.pethistory.pet.service.EspecieService;
+import com.pethistory.pet.repositories.EspecieRepositorio;
 
 @RestController
 @RequestMapping("/api/especie")
 public class EspecieController {
+    @Autowired
+    private EspecieRepositorio espRepo;
 
-    private EspecieService especieSer;
-    public EspecieController(EspecieService especieSer){
-        this.especieSer=especieSer;
-    }
-    @GetMapping("/{id}")
-    public ResponseEntity<EspecieDto> getEspeAll(@PathVariable Long id){
-        EspecieDto especieDto= especieSer.buscarIdAll(id);
-        return ResponseEntity.ok(especieDto);
-    }
     @GetMapping
-    public ResponseEntity<List<EspecieDto>> getAll(){
-        return ResponseEntity.ok(especieSer.listarTodos());
-}
+    public List<EspecieDto> getAllEspecies() {
+        return espRepo.findAll().stream().map(especie -> {
+            EspecieDto dto = new EspecieDto();
+            dto.setIdEspecie(especie.getId());
+            dto.setNomEspecie(especie.getNomEspecie());
+            return dto;
+        }).toList();
+    }
 }
