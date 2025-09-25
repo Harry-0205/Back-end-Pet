@@ -48,5 +48,6 @@ public class ProcedimientoHisCliServiceImple implements ProcedimientoHisCliServi
         .map(proHisCliMap::toDto_procedimiento_historiaclinica)
         .collect(Collectors.toList());
     }
+  
 }
 
