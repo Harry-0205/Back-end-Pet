@@ -1,5 +1,7 @@
 package com.pethistory.pet.service;
 
+import java.util.List;
+
 import com.pethistory.pet.dtos.DtoMascota;
 import com.pethistory.pet.dtos.DtoMascotaAll;
 import com.pethistory.pet.dtos.MascotaCreateDto;
@@ -11,5 +13,6 @@ public interface MascotaService {
     DtoMascota buscarIdAll(Long id);
     DtoMascotaAll buscarId(Long id);
     DtoMascota actualizarMascota(MascotaUpdateDto dto);
+    List <DtoMascota> listartodos ();
 
 }
