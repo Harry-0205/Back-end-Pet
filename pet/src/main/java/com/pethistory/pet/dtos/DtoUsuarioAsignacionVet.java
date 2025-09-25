@@ -8,7 +8,6 @@ public class DtoUsuarioAsignacionVet {
     private String nombreUsu;
     private Long idRol;
     private String nomRol;
-    private Long numContra;
     private Long idVet;
     private String nomVet;
     private String estado;

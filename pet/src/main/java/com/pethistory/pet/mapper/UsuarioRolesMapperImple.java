@@ -66,7 +66,6 @@ public class UsuarioRolesMapperImple implements UsuarioRolesMapper{
         DtoUsuarioAsignacionVet dto = new DtoUsuarioAsignacionVet();
         dto.setDoc(entity.getUsuario().getId());
         dto.setNombreUsu(entity.getUsuario().getNom());
-        dto.setNumContra(entity.getUsuario().getContrato());
         dto.setIdVet(entity.getVeterinarias().getIdVet());
         dto.setNomVet(entity.getVeterinarias().getNom());
         return dto;

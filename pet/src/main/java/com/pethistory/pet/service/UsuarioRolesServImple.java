@@ -11,18 +11,32 @@ import com.pethistory.pet.dtos.DtoRespUsuAsigVet;
 import com.pethistory.pet.dtos.DtoUsuarioAsignacionVet;
 import com.pethistory.pet.dtos.UsuarioRolesDto;
 import com.pethistory.pet.mapper.UsuarioRolesMapper;
+import com.pethistory.pet.models.Rol;
+import com.pethistory.pet.models.Usuario;
 import com.pethistory.pet.models.UsuarioRolId;
 import com.pethistory.pet.models.UsuarioRoles;
+import com.pethistory.pet.models.Veterinarias;
+import com.pethistory.pet.repositories.RolRepositorye;
+import com.pethistory.pet.repositories.UsuarioRepo;
 import com.pethistory.pet.repositories.UsuarioRolesRepo;
+import com.pethistory.pet.repositories.VeterinariasRepositories;
+
+import jakarta.persistence.EntityNotFoundException;
 
 
 
 @Service
 public class UsuarioRolesServImple implements UsuarioRolesServ {
+    private final UsuarioRepo usuRepo;
+    private final RolRepositorye rolRepo;
+    private final VeterinariasRepositories vetRepo;
     private final UsuarioRolesRepo usuRolRepo;
     private final UsuarioRolesMapper usuRolMapper;
 
-    public UsuarioRolesServImple (UsuarioRolesRepo usuRolRepo,UsuarioRolesMapper usuRolMapper){
+    public UsuarioRolesServImple ( UsuarioRepo usuRepo, RolRepositorye rolRepo,VeterinariasRepositories vetRepo,UsuarioRolesRepo usuRolRepo,UsuarioRolesMapper usuRolMapper){
+        this.usuRepo=usuRepo;
+        this.rolRepo=rolRepo;
+        this.vetRepo=vetRepo;
         this.usuRolMapper=usuRolMapper;
         this.usuRolRepo=usuRolRepo;
     }
@@ -58,8 +72,15 @@ public class UsuarioRolesServImple implements UsuarioRolesServ {
         int asignados=0, duplicados=0, fallidos=0;
         for (UsuarioRolesDto usuRolDto : lista) {
             DtoUsuarioAsignacionVet respuesta= new DtoUsuarioAsignacionVet();
+            Usuario usu = usuRepo.findById(usuRolDto.getIdDocumento()).orElseThrow(()->new EntityNotFoundException("Error#1 : Usuario no encontrado"));
+            Rol rol= rolRepo.findById(usuRolDto.getIdRol()).orElseThrow(()->new EntityNotFoundException("Error#2 : Rol no encontrado"));
+            Veterinarias vet = vetRepo.findById(usuRolDto.getIdVeterinaria()).orElseThrow(()->new EntityNotFoundException("Error#3 : Veterinaria no encontrado"));
             respuesta.setDoc(usuRolDto.getIdDocumento());
+            respuesta.setNombreUsu(usu.getNom());
             respuesta.setIdRol(usuRolDto.getIdRol());
+            respuesta.setNomRol(rol.getNomRol());
+            respuesta.setIdVet(usuRolDto.getIdVeterinaria());
+            respuesta.setNomVet(vet.getNom());
             try {
                 UsuarioRolId id = new UsuarioRolId(usuRolDto.getIdDocumento(),usuRolDto.getIdRol());
                 if (usuRolRepo.existsById(id)) {
