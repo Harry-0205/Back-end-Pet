@@ -8,6 +8,5 @@ public interface ProcedimientoHisCliService {
     Dto_procedimiento_historiaclinica crear(Dto_procedimiento_historiaclinica dtohiscli);
     List<Dto_procedimiento_historiaclinica> listarPorProcedimiento(Long procediId);
     List<Dto_procedimiento_historiaclinica> listarPorHistoria(Long idHistoria );
-   
     
 }

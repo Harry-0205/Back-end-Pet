@@ -13,7 +13,6 @@ import java.sql.Date;
 @Data
 public class AgendamientoDto {
 
-    @NotNull
     private Long idCita;
 
     @NotNull
@@ -22,6 +21,9 @@ public class AgendamientoDto {
     @NotNull
     private Date fecAsi;
 
+    @NotNull
+    private Long idMascota;
+    
     @NotNull
     private Long idProcedimientos;
     
