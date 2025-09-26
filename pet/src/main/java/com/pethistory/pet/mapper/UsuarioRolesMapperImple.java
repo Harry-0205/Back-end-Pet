@@ -2,7 +2,6 @@ package com.pethistory.pet.mapper;
 
 import org.springframework.stereotype.Component;
 
-import com.pethistory.pet.dtos.DtoUsuario;
 import com.pethistory.pet.dtos.DtoUsuarioAsignacionVet;
 import com.pethistory.pet.dtos.UsuarioRolesDto;
 import com.pethistory.pet.models.Rol;
@@ -42,12 +41,9 @@ public class UsuarioRolesMapperImple implements UsuarioRolesMapper{
         UsuarioRoles uR= new UsuarioRoles();
         uR.setId(id);
         uR.setUsuario(usu);
-        usu.setNom(usuRolDto.getNomUsuario());
         uR.setRol(rol);
-        usuRolDto.setNomRol(rol.getNomRol());
         Veterinarias vet= vetRepo.findById(usuRolDto.getIdVeterinaria()).orElseThrow(()->new EntityNotFoundException("Nit no encontrado"));
         uR.setVeterinarias(vet);
-        vet.setNom(usuRolDto.getNomVeterinaria());
         return uR;
     }
     @Override
@@ -64,10 +60,8 @@ public class UsuarioRolesMapperImple implements UsuarioRolesMapper{
     @Override
     public DtoUsuarioAsignacionVet toAsignacion(UsuarioRoles entity){
         DtoUsuarioAsignacionVet dto = new DtoUsuarioAsignacionVet();
-        dto.setDoc(entity.getUsuario().getId());
-        dto.setNombreUsu(entity.getUsuario().getNom());
-        dto.setIdVet(entity.getVeterinarias().getIdVet());
-        dto.setNomVet(entity.getVeterinarias().getNom());
+        dto.setIdDocumento(entity.getUsuario().getId());
+        dto.setIdVeterinaria(entity.getVeterinarias().getIdVet());
         return dto;
     }
 }

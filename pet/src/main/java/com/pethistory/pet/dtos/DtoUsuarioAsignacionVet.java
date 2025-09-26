@@ -4,11 +4,11 @@ import lombok.Data;
 
 @Data
 public class DtoUsuarioAsignacionVet {
-    private Long doc;
-    private String nombreUsu;
+    private Long idDocumento;
+    private String nom;
     private Long idRol;
     private String nomRol;
-    private Long idVet;
+    private Long idVeterinaria;
     private String nomVet;
     private String estado;
     private String mensaje;
