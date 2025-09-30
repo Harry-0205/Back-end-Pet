@@ -1,5 +1,8 @@
 package com.pethistory.pet.service;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 import org.springframework.stereotype.Service;
 
 import com.pethistory.pet.dtos.DtoMascota;
@@ -11,7 +14,8 @@ import com.pethistory.pet.models.Mascota;
 import com.pethistory.pet.repositories.MascotaRepo;
 
 import jakarta.persistence.EntityNotFoundException;
-import jakarta.transaction.Transactional;
+
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class MascotaServiceImple implements MascotaService {
@@ -63,6 +67,14 @@ public class MascotaServiceImple implements MascotaService {
     Mascota mascota = mascMap.toMascotaCreate(dto);
     Mascota guardado =mascRepo.save(mascota);
     return mascMap.toDtoMascota(guardado);
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public List <DtoMascota> listartodos(){
+        return mascRepo.findAll().stream()
+        .map(mascMap::toDtoMascota)
+        .collect(Collectors.toList());
     }
 }
 
