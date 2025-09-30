@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class Dto_procedimiento_historiaclinica {
+public class ReporteDto {
     @NotNull
     private Long idhisto;
     @NotNull
