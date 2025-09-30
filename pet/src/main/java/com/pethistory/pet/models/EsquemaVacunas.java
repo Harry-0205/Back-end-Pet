@@ -3,8 +3,6 @@ package com.pethistory.pet.models;
 import java.sql.Date;
 
 import jakarta.persistence.EmbeddedId;
-
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.ForeignKey;
 import jakarta.persistence.JoinColumn;
@@ -21,6 +19,8 @@ import lombok.NoArgsConstructor;
 public class EsquemaVacunas {
     private Date fecVacu;
     private String dosis;
+    private Boolean activo = true;
+
     @EmbeddedId
     private EsquemaVacunasId id = new EsquemaVacunasId();
 
@@ -37,6 +37,4 @@ public class EsquemaVacunas {
     @ManyToOne(optional = false)
     @JoinColumn(name = "Usuario", foreignKey = @ForeignKey(name = "FK_Usuario_0"))
     private Usuario usuario;
-
-
 }
