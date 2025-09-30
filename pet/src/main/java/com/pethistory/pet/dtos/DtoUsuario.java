@@ -13,6 +13,7 @@ import lombok.NoArgsConstructor;
 @Data
 public class DtoUsuario {
 
+    @NotNull
     private Long numDoc;
 
     @NotNull
