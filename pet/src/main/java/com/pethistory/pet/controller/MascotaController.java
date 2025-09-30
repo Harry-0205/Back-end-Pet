@@ -11,6 +11,7 @@ import com.pethistory.pet.service.MascotaService;
 
 import jakarta.validation.Valid;
 
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.http.HttpStatus;
@@ -20,6 +21,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
 
 
 
@@ -68,5 +71,12 @@ public class MascotaController {
         DtoMascota actualizado = mascSer.actualizarMascota(dto);
         return ResponseEntity.ok(actualizado);
     }
+
+    @GetMapping
+    public ResponseEntity <List<DtoMascota>> listartodos() {
+        List<DtoMascota> mascotas = mascSer.listartodos();
+        return ResponseEntity.ok(mascotas);
+    }
+    
 
 }

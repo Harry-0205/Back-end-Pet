@@ -8,26 +8,24 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
-public class DtoEsquemaVacunas {
-   
-   
-   @NotNull
-   @Size(min = 3, max = 255)
-   private String dos;
+public class EsquemaVacunasCreateDto {
 
-   @NotNull
-   private Date fecVacu;
+    @NotNull
+    @Size(min = 3, max = 255)
+    private String dos;
 
-   @NotNull
-   private Long idMascota;
+    @NotNull
+    private Date fecVacu;
 
-   @NotNull
-   private Long usuarioDoc;
+    @NotNull
+    private Long idMascota;
 
-   @NotNull Long idVacuna;
+    @NotNull
+    private Long idVacuna;
 
-
+    @NotNull
+    private Long usuarioDoc;
 }

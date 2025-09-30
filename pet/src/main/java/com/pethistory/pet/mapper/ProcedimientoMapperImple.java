@@ -1,5 +1,7 @@
 package com.pethistory.pet.mapper;
 
+import java.sql.Time;
+
 import org.springframework.stereotype.Component;
 
 import com.pethistory.pet.dtos.ProcedimientoDto;
@@ -18,7 +20,7 @@ public class ProcedimientoMapperImple implements ProcedimientoMapper {
         procedimiento.setId(dto.getIdProcedimiento());
         procedimiento.setProcedimiento(dto.getProcedimiento());
         procedimiento.setCosto(dto.getCosto());
-        procedimiento.setDuracion(dto.getDuracion());
+        procedimiento.setDuracion(new Time(dto.getDuracion().getTime()));
         procedimiento.setAnotaciones(dto.getAnotaciones());
 
         return procedimiento;

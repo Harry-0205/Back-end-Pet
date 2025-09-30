@@ -54,10 +54,4 @@ public class ProcedimientoServiceImple implements ProcedimientoService {
     Procedimiento actualizado = ProRepo.save(existente);
     return ProMap.toProcedimientoDto(actualizado);
 }
-
-    @Override
-    public void eliminar(Long id) {
-    Procedimiento existente = ProRepo.findById(id).orElseThrow(() -> new EntityNotFoundException("Procedimiento no encontrado con ID: " + id));
-    ProRepo.delete(existente);
-}
 }

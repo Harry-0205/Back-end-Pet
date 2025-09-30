@@ -1,6 +1,7 @@
 package com.pethistory.pet.models;
 
-import java.sql.Date;
+
+import java.sql.Time;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -21,7 +22,7 @@ public class Procedimiento {
 
     private String procedimiento;
     private Integer costo;
-    private Date duracion;
+    private Time duracion;
     private String Anotaciones;
 
 }
