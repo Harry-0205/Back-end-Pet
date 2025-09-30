@@ -26,39 +26,39 @@ public class ReporteMapperImple implements ReporteMapper{
         this.urep=urep;
     }
     @Override
-    public Reporte toProcedimientoHistoriaclinica(ReporteDto proHisDto){
-        if (proHisDto ==null) {
+    public Reporte toReporte(ReporteDto reporteDto){
+        if (reporteDto ==null) {
             return null;
         }
-        HistoriaClinica hiscli = histRep.findById(proHisDto.getIdhisto())
-                .orElseThrow(()->new EntityNotFoundException("historiaclinica no encontrada"));
+        HistoriaClinica hiscli = histRep.findById(reporteDto.getIdHisto())
+                .orElseThrow(()->new EntityNotFoundException("historia clinica no encontrada"));
         
-        Procedimiento procedi = proceRep.findById(proHisDto.getIdProcedi())
+        Procedimiento procedi = proceRep.findById(reporteDto.getIdProcedi())
                 .orElseThrow(()->new EntityNotFoundException("Procedimiento no encontrado"));
 
         Reporte ph = new Reporte();
         ph.setHistoriaClinica(hiscli);
         ph.setProcedimiento(procedi);
-        ph.setAnotaciones(proHisDto.getAnota());
+        ph.setAnotaciones(reporteDto.getAnota());
         
-        Usuario usu = urep.findById(proHisDto.getUsuaDog()).orElseThrow(() -> new EntityNotFoundException("no se encvontro"));
+        Usuario usu = urep.findById(reporteDto.getUsuaDog()).orElseThrow(() -> new EntityNotFoundException("no se encvontro"));
         ph.setUsuario(usu);
-        usu.setNom(proHisDto.getNombDoc());
         
         return ph;
     }
     @Override
-    public ReporteDto toDto_procedimiento_historiaclinica(Reporte proHisCli){
-        if ( proHisCli== null) {
+    public ReporteDto toReporteDto (Reporte reporte){
+        if ( reporte== null) {
             return null;
             
         }
         return new ReporteDto(
-            proHisCli.getHistoriaClinica().getId(),
-            proHisCli.getProcedimiento().getId(),
-            proHisCli.getAnotaciones(),
-            proHisCli.getUsuario().getId(),
-            proHisCli.getUsuario().getNom()
+            reporte.getId(),
+            reporte.getHistoriaClinica().getId(),
+            reporte.getProcedimiento().getId(),
+            reporte.getAnotaciones(),
+            reporte.getUsuario().getId(),
+            reporte.getUsuario().getNom()
         );
     }
 

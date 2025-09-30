@@ -43,10 +43,4 @@ public class ProcedimientoController {
         ProcedimientoDto actualizado = procedimientoService.actualizar(id, dto);
         return ResponseEntity.ok(actualizado);
     }
-
-    @DeleteMapping("eliminar/{id}")
-    public ResponseEntity<Void> eliminar(@PathVariable Long id) {
-        procedimientoService.eliminar(id);
-        return ResponseEntity.noContent().build();
-    }
 }

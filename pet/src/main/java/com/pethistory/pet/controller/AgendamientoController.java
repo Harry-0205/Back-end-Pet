@@ -56,10 +56,4 @@ public class AgendamientoController {
         return ResponseEntity.ok(actualizado);
     }
 
-
-    @DeleteMapping("/Eliminar{id}")
-    public ResponseEntity<Void> eliminar(@PathVariable Long id) {
-        agenServ.eliminar(id);
-        return ResponseEntity.noContent().build();
-    }
 }
