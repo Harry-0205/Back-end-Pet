@@ -10,5 +10,4 @@ public interface AgendamientoService {
     AgendamientoDto buscarPorId(Long id);
     List<AgendamientoDto> listarTodos();
     AgendamientoDto actualizar(Long id, AgendamientoDto agendamientoDto);
-    void eliminar(Long id);
 }

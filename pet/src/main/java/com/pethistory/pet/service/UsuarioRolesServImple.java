@@ -1,4 +1,4 @@
-package com.pethistory.pet.service;
+ package com.pethistory.pet.service;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -70,19 +70,23 @@ public class UsuarioRolesServImple implements UsuarioRolesServ {
     public DtoRespUsuAsigVet asignarVarios(List<UsuarioRolesDto> lista ){
         List<DtoUsuarioAsignacionVet> respuestas= new ArrayList<>();
         int asignados=0, duplicados=0, fallidos=0;
+        Veterinarias vet;
+        Usuario usu;
+        Rol rol;
         for (UsuarioRolesDto usuRolDto : lista) {
             DtoUsuarioAsignacionVet respuesta= new DtoUsuarioAsignacionVet();
-            Usuario usu = usuRepo.findById(usuRolDto.getIdDocumento()).orElseThrow(()->new EntityNotFoundException("Error#1 : Usuario no encontrado"));
-            Rol rol= rolRepo.findById(usuRolDto.getIdRol()).orElseThrow(()->new EntityNotFoundException("Error#2 : Rol no encontrado"));
-            Veterinarias vet = vetRepo.findById(usuRolDto.getIdVeterinaria()).orElseThrow(()->new EntityNotFoundException("Error#3 : Veterinaria no encontrado"));
-            respuesta.setDoc(usuRolDto.getIdDocumento());
-            respuesta.setNombreUsu(usu.getNom());
+            vet = vetRepo.findById(usuRolDto.getIdVeterinaria()).orElseThrow(()->new EntityNotFoundException("Error#3 : Veterinaria no encontrado"));
+            usu = usuRepo.findById(usuRolDto.getIdDocumento()).orElseThrow(()->new EntityNotFoundException("Error#1 : Veterinaria no encontrado"));
+            rol = rolRepo.findById(usuRolDto.getIdRol()).orElseThrow(()->new EntityNotFoundException("Error#1 : Veterinaria no encontrado"));
+            respuesta.setIdDocumento(usuRolDto.getIdDocumento());
+            respuesta.setNom(usu.getNom());
             respuesta.setIdRol(usuRolDto.getIdRol());
             respuesta.setNomRol(rol.getNomRol());
-            respuesta.setIdVet(usuRolDto.getIdVeterinaria());
+            respuesta.setIdVeterinaria(usuRolDto.getIdVeterinaria());
             respuesta.setNomVet(vet.getNom());
             try {
                 UsuarioRolId id = new UsuarioRolId(usuRolDto.getIdDocumento(),usuRolDto.getIdRol());
+
                 if (usuRolRepo.existsById(id)) {
                     respuesta.setEstado("DUPLICADO");
                     respuesta.setMensaje("El usuario con ese rol ya existe");

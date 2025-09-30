@@ -11,17 +11,11 @@ import lombok.NoArgsConstructor;
 public class UsuarioRolesDto {
     @NotNull(message = "Usuario no encontrado")
     private Long idDocumento;
-
-    private String nomUsuario;
-
-
+    private String nom;
     @NotNull(message = "Rol no encontrado")
     private Long idRol;
-
     private String nomRol;
-
     @NotNull(message = "Veterinaria no encontrada")
     private Long idVeterinaria;
-
-    private String nomVeterinaria;
+    private String nomVet;
 }
