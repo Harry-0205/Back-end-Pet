@@ -8,5 +8,4 @@ public interface ProcedimientoService {
     ProcedimientoDto buscarPorId(Long id);
     List<ProcedimientoDto> listarTodos();
     ProcedimientoDto actualizar(Long id, ProcedimientoDto dto);
-    void eliminar(Long id);
 }

@@ -8,12 +8,14 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class Dto_procedimiento_historiaclinica {
+public class ReporteDto {
+    
+    private Long idRepor;
     @NotNull
-    private Long idhisto;
+    private Long idHisto;
     @NotNull
     private Long idProcedi;
-    @NotNull
+    
     private String anota;
     @NotNull
     private Long usuaDog;

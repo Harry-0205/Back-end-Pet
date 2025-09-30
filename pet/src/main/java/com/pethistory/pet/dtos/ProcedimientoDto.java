@@ -6,7 +6,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.sql.Date;
+
+import java.sql.Time;
 
 
 @AllArgsConstructor
@@ -24,7 +25,7 @@ public class ProcedimientoDto {
     private Integer costo;
 
     @NotNull
-    private Date duracion;
+    private Time duracion;
 
     @NotNull
     @Size(max = 500)

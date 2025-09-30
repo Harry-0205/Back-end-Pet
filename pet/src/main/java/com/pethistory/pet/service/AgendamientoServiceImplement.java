@@ -50,10 +50,4 @@ public class AgendamientoServiceImplement implements AgendamientoService {
     Agendamiento saved = repo.save(ag);
     return map.toAgendamientoDto(saved);
 }
-
-    @Override
-    public void eliminar(Long id) {
-    Agendamiento ag = repo.findById(id).orElseThrow(() -> new EntityNotFoundException("Agendamiento no encontrado con ID: " + id));
-    repo.delete(ag);
-}
 }
