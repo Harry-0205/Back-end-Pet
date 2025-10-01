@@ -3,7 +3,6 @@ package com.pethistory.pet.mapper;
 import org.springframework.stereotype.Component;
 
 import com.pethistory.pet.dtos.AgendamientoDto;
-import com.pethistory.pet.dtos.DtoMascota;
 import com.pethistory.pet.models.Agendamiento;
 import com.pethistory.pet.models.Mascota;
 import com.pethistory.pet.models.Procedimiento;
@@ -59,6 +58,7 @@ public class AgendamientoMapperImplement implements AgendamientoMapper{
     agendamiento.getFecAg(),
     agendamiento.getFecAsi(),
     agendamiento.getMascota().getId(),
+    agendamiento.getMascota().getNombre(),
     agendamiento.getProcedimiento().getId(),
     agendamiento.getProcedimiento().getProcedimiento(),
     agendamiento.getVeterinaria().getIdVet(),

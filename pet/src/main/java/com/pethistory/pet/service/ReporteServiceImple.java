@@ -13,7 +13,6 @@ import com.pethistory.pet.mapper.ReporteMapper;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.pethistory.pet.models.HistoriaClinica;
-import com.pethistory.pet.models.Mascota;
 import com.pethistory.pet.models.Procedimiento;
 import com.pethistory.pet.models.Reporte;
 import com.pethistory.pet.models.Usuario;
@@ -32,17 +31,15 @@ public class ReporteServiceImple implements ReporteService{
     
     private final ReporteRepositories proHisCliRepo;
     private final ReporteMapper proHisCliMap;
-    private final MascotaRepo masRep;
     private final UsuarioRepo usuRep;
     private final ProcedimientoRepositorio proRep;
     private final HistoriaClinicaRepositories hisRep;
 
 
-    public ReporteServiceImple(ReporteRepositories proHisCliRepo,ReporteMapper proHisCliMap,MascotaRepo masRep,UsuarioRepo usuRep,ProcedimientoRepositorio proRep,HistoriaClinicaRepositories hisRep)
+    public ReporteServiceImple(ReporteRepositories proHisCliRepo,ReporteMapper proHisCliMap,UsuarioRepo usuRep,ProcedimientoRepositorio proRep,HistoriaClinicaRepositories hisRep)
     {
         this.proHisCliRepo=proHisCliRepo;
         this.proHisCliMap=proHisCliMap;
-        this.masRep=masRep;
         this.usuRep=usuRep;
         this.proRep=proRep;
         this.hisRep=hisRep;

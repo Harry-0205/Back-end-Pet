@@ -12,14 +12,17 @@ import lombok.NoArgsConstructor;
 @Data
 
 public class HistoriaClinicaDto {
-    @NotNull
+
     private Long id;
+
     @NotNull
     private Date fechaI;
+
     @NotNull
     private String anot;
+    
     @NotNull
     private Long idMascta;
-    @NotNull
+    
     private String nombreMascot;
 }

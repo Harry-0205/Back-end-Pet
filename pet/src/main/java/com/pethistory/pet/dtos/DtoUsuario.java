@@ -13,6 +13,7 @@ import lombok.NoArgsConstructor;
 @Data
 public class DtoUsuario {
 
+    @NotNull
     private Long numDoc;
 
     @NotNull
@@ -38,9 +39,9 @@ public class DtoUsuario {
     @NotNull
     private Date fechaNac;
 
-    @NotNull
     private Long tipdoc;
 
+    @NotNull
     private String nomTipoDoc;
 
     @NotNull

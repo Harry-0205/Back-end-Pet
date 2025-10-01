@@ -23,19 +23,19 @@ public class AgendamientoDto {
 
     @NotNull
     private Long idMascota;
+
+    private String nomMasc;
     
-    @NotNull
+
     private Long idProcedimientos;
-    
+
     @NotNull
     private String procedimientos;
 
-    @NotNull
     private Long idVeterinarias;
 
     @NotNull
     private String nomVet;
-    
-    @NotNull
+
     private Boolean estado;
 }
