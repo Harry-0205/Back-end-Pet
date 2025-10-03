@@ -13,6 +13,8 @@ import lombok.NoArgsConstructor;
 @Data
 public class DtoEsquemaVacunas {
    
+   @NotNull
+   private Long id;
    
    @NotNull
    @Size(min = 3, max = 255)

@@ -31,7 +31,6 @@ public class HistoriaClinicaMapperImple implements HistoriaClinicaMapper{
         
         Mascota masc = masrep.findById(historiaClinicaDto.getIdMascta()).orElseThrow(()-> new EntityNotFoundException("Mascota no encontrada"));
         hiscli.setMascota(masc);
-        masc.setNombre(historiaClinicaDto.getNombreMascot());
         return hiscli;
 
     }
