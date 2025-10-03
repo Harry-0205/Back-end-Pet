@@ -49,5 +49,5 @@ public class DtoUsuario {
     private String correo;
 
     @NotNull
-    private byte [] passw;
+    private String passw;
 }

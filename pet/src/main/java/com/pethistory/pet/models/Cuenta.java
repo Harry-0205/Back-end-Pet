@@ -17,7 +17,7 @@ public class Cuenta {
     private String correo;
 
     @Column(columnDefinition  = "VARBINARY(500)")
-    private byte [] contra;
+    private String contra;
 
     @OneToOne(mappedBy = "cuenta")
     private Usuario usuario;
