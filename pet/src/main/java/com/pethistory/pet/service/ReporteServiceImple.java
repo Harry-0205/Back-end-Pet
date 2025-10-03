@@ -17,7 +17,6 @@ import com.pethistory.pet.models.Procedimiento;
 import com.pethistory.pet.models.Reporte;
 import com.pethistory.pet.models.Usuario;
 import com.pethistory.pet.repositories.HistoriaClinicaRepositories;
-import com.pethistory.pet.repositories.MascotaRepo;
 import com.pethistory.pet.repositories.ProcedimientoRepositorio;
 import com.pethistory.pet.repositories.ReporteRepositories;
 import com.pethistory.pet.repositories.UsuarioRepo;
