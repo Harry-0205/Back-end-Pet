@@ -3,7 +3,6 @@ package com.pethistory.pet.controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.pethistory.pet.dtos.ProceAsignaDto;
 import com.pethistory.pet.dtos.ReporteDto;
 import com.pethistory.pet.dtos.RespAsignProDto;
 import com.pethistory.pet.service.ReporteService;
