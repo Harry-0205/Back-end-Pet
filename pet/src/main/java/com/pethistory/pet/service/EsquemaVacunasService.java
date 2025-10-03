@@ -10,7 +10,7 @@ public interface EsquemaVacunasService {
 
     DtoEsquemaVacunas crear(EsquemaVacunasCreateDto dto);
 
-    DtoEsquemaVacunas obtener(Long idMascota, Long idVacuna);
+    DtoEsquemaVacunas obtener(Long id);
 
     List<DtoEsquemaVacunas> listarPorMascota(Long idMascota);
 

@@ -32,7 +32,7 @@ public class Usuario {
     private Date fecNac;
 
     @ManyToOne(optional = false)
-    @JoinColumn(name = "idTipo", foreignKey = @ForeignKey(name = "FK_Usuario_1"))
+    @JoinColumn(name = "idTipo", foreignKey = @ForeignKey(name = "FK_Usuario_TipoDoc"))
     private TipoDoc tipoDoc;
 
     @OneToMany(mappedBy = "usuario")

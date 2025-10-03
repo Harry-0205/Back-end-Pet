@@ -35,7 +35,7 @@ public class Mascota {
     private Color color;
 
     @ManyToOne(optional = false)
-    @JoinColumn(name = "Usuario", foreignKey = @ForeignKey(name = "FK_Usuario_3"))
+    @JoinColumn(name = "Usuario", foreignKey = @ForeignKey(name = "FK_Usuario_mascota"))
     private Usuario usuario;
 
     @ManyToOne(optional = false)

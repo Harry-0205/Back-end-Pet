@@ -5,7 +5,6 @@ import java.util.Map;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -46,14 +45,14 @@ public class EsquemaVacunasController {
     }
 
     @PostMapping("/crearVarios")
-    public ResponseEntity<Map<String, Object>> crearVarios(@Valid @RequestBody List<EsquemaVacunasCreateDto> lista){
+    public ResponseEntity<Map<String, Object>> crearSista(@RequestBody List<EsquemaVacunasCreateDto> lista){
         Map<String, Object> respuesta = service.crearVarios(lista);
         return ResponseEntity.ok(respuesta);
     }
 
-    @GetMapping("/{idMascota}/{idVacuna}")
-    public ResponseEntity<DtoEsquemaVacunas> obtener(@PathVariable Long idMascota, @PathVariable Long idVacuna){
-        DtoEsquemaVacunas dto = service.obtener(idMascota, idVacuna);
+    @GetMapping("/{id}")
+    public ResponseEntity<DtoEsquemaVacunas> obtener(@PathVariable Long id){
+        DtoEsquemaVacunas dto = service.obtener(id);
         return ResponseEntity.ok(dto);
     }
 
