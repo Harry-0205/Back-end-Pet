@@ -5,7 +5,6 @@ import org.springframework.stereotype.Component;
 import com.pethistory.pet.dtos.DtoEsquemaVacunas;
 import com.pethistory.pet.dtos.EsquemaVacunasCreateDto;
 import com.pethistory.pet.models.EsquemaVacunas;
-import com.pethistory.pet.models.EsquemaVacunasId;
 import com.pethistory.pet.models.Mascota;
 import com.pethistory.pet.models.Usuario;
 import com.pethistory.pet.models.Vacunas;
@@ -41,9 +40,6 @@ public class EsquemaVacunasMapperImple implements EsquemaVacunasMapper{
         EsquemaVacunas entity = new EsquemaVacunas();
         entity.setFecVacu(dto.getFecVacu());
         entity.setDosis(dto.getDos());
-
-        EsquemaVacunasId id = new EsquemaVacunasId(masc.getId(), vac.getId());
-        entity.setId(id);
         entity.setMascota(masc);
         entity.setVacunas(vac);
         entity.setUsuario(usu);

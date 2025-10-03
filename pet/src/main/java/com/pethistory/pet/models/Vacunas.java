@@ -16,11 +16,9 @@ public class Vacunas{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    @Column(length = 11)
-    private String vacuna;
     @Column(length = 50)
+    private String vacuna;
     private Long costo;
-    @Column(length = 11)
     private String dosis;
     @Column(length = 255)
     private String duracion;

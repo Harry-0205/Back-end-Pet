@@ -16,10 +16,8 @@ import jakarta.persistence.EntityNotFoundException;
 public class UsuarioMapperImple implements UsuarioMapper{
 
     private final TipoDocRepo tipDocRepo;
-    private final CuentaRepo cuentaRepo;
 
     public UsuarioMapperImple( CuentaRepo cuentaRepo, TipoDocRepo tipDocRepo){
-        this.cuentaRepo= cuentaRepo;
         this.tipDocRepo= tipDocRepo;
     }
 
@@ -40,11 +38,9 @@ public class UsuarioMapperImple implements UsuarioMapper{
 
         TipoDoc tipoDoc = tipDocRepo.findById(dtoUsuario.getTipdoc()).orElseThrow(()-> new EntityNotFoundException("Tipo de documento no encontrado"));
         usuario.setTipoDoc(tipoDoc);
-
-        Cuenta cuenta = cuentaRepo.findById(dtoUsuario.getCorreo()).orElseThrow(()-> new EntityNotFoundException("Correo electronico no encontrado"));
-        usuario.setCuenta(cuenta);
+        Cuenta cuenta = new Cuenta();
+        cuenta.setCorreo(dtoUsuario.getCorreo());
         cuenta.setContra(dtoUsuario.getPassw());
-
         return usuario;
     }
     @Override
@@ -77,7 +73,6 @@ public class UsuarioMapperImple implements UsuarioMapper{
         dtoUsuarioGett.setApeUno(usuario.getApe1());
         dtoUsuarioGett.setApeDos(usuario.getApe2());
         dtoUsuarioGett.setTelefono(usuario.getTel());
-        dtoUsuarioGett.setNumContra(usuario.getContrato());
         dtoUsuarioGett.setCorreo(usuario.getCuenta().getCorreo());
         return dtoUsuarioGett;
     }

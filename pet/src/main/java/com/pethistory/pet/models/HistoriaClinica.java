@@ -27,7 +27,7 @@ public class HistoriaClinica {
     private String anotaciones;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name ="mascota_id", referencedColumnName ="id", foreignKey = @ForeignKey(name= "FK_historiaclinica_mascota"))
+    @JoinColumn(name ="mascotaId", referencedColumnName ="id", foreignKey = @ForeignKey(name= "FK_historiaclinica_mascota"))
     private Mascota mascota;
     
 
