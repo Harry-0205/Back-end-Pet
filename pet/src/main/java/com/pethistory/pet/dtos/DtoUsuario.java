@@ -39,9 +39,9 @@ public class DtoUsuario {
     @NotNull
     private Date fechaNac;
 
-    @NotNull
     private Long tipdoc;
 
+    @NotNull
     private String nomTipoDoc;
 
     @NotNull

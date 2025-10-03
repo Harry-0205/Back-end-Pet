@@ -25,7 +25,6 @@ public class EsquemaVacunas {
     private Long id;
     private Date fecVacu;
     private String dosis;
-    private Boolean activo = true;
 
     @ManyToOne
     @JoinColumn(name = "Vacuna", foreignKey = @ForeignKey(name="FK_vacu"))
