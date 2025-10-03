@@ -45,7 +45,7 @@ public class EsquemaVacunasController {
     }
 
     @PostMapping("/crearVarios")
-    public ResponseEntity<Map<String, Object>> crearSista(@RequestBody List<EsquemaVacunasCreateDto> lista){
+    public ResponseEntity<Map<String, Object>> crearVarios(@Valid @RequestBody List<EsquemaVacunasCreateDto> lista){
         Map<String, Object> respuesta = service.crearVarios(lista);
         return ResponseEntity.ok(respuesta);
     }

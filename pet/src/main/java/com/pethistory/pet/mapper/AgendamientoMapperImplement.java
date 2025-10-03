@@ -42,8 +42,10 @@ public class AgendamientoMapperImplement implements AgendamientoMapper{
     agendamiento.setMascota(mascota);
     Procedimiento procedimiento = procedimientoRepositorio.findById(agendamientoDto.getIdProcedimientos()).orElseThrow(() -> new EntityNotFoundException("Tipo de id no encontrado"));
     agendamiento.setProcedimiento(procedimiento);
+    procedimiento.setProcedimiento(agendamientoDto.getProcedimientos());
     Veterinarias veterinaria = veterinariasRepositories.findById(agendamientoDto.getIdVeterinarias()).orElseThrow(() -> new EntityNotFoundException("Veterinaria no encontrada"));
     agendamiento.setVeterinaria(veterinaria);
+    veterinaria.setNom(agendamientoDto.getNomVet());
     return agendamiento;
     }
     @Override
