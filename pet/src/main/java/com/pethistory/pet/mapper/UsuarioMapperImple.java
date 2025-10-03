@@ -44,6 +44,7 @@ public class UsuarioMapperImple implements UsuarioMapper{
         Cuenta cuenta = cuentaRepo.findById(dtoUsuario.getCorreo()).orElseThrow(()-> new EntityNotFoundException("Correo electronico no encontrado"));
         usuario.setCuenta(cuenta);
         cuenta.setContra(dtoUsuario.getPassw());
+    
 
         return usuario;
     }

@@ -23,6 +23,6 @@ public class Procedimiento {
     private String procedimiento;
     private Integer costo;
     private Time duracion;
-    private String Anotaciones;
+    private String anotaciones;
 
 }

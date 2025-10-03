@@ -19,7 +19,6 @@ import lombok.NoArgsConstructor;
 public class EsquemaVacunas {
     private Date fecVacu;
     private String dosis;
-    private Boolean activo = true;
 
     @EmbeddedId
     private EsquemaVacunasId id = new EsquemaVacunasId();
