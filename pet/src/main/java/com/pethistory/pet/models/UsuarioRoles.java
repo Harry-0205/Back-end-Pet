@@ -29,7 +29,7 @@ public class UsuarioRoles {
     @JoinColumn(name = "Rol",foreignKey = @ForeignKey(name="FK_id_rol"))
     private Rol rol;
 
-    @ManyToOne(optional = false)
+    @ManyToOne(optional = true)
     @JoinColumn(name = "idVet", foreignKey = @ForeignKey(name="FK_idVet"))
     private Veterinarias veterinarias;
 

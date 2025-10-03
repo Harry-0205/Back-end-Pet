@@ -41,8 +41,6 @@ public class UsuarioMapperImple implements UsuarioMapper{
         Cuenta cuenta = new Cuenta();
         cuenta.setCorreo(dtoUsuario.getCorreo());
         cuenta.setContra(dtoUsuario.getPassw());
-        usuario.setCuenta(cuenta);
-
         return usuario;
     }
     @Override
