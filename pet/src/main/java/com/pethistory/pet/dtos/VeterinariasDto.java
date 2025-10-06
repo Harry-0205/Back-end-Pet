@@ -15,7 +15,7 @@ public class VeterinariasDto {
     private String nombre;
     @NotNull
     private String mail;
-    @NotNull
+  
     private String fotico;
     @NotNull
     private String direccion;
