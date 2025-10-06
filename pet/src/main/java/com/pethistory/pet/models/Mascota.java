@@ -27,7 +27,7 @@ public class Mascota {
     private String nombre;
     private Date fecNam;
     private String foto;
-    private Boolean vivo;
+    private Boolean vivo = true;
 
 
     @ManyToOne(optional = false)

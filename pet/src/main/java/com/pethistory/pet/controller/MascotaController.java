@@ -38,9 +38,9 @@ public class MascotaController {
 
 
     @PostMapping("/crear")
-    public ResponseEntity<?> crearMasc(@Valid @RequestBody MascotaCreateDto dto) {
+    public ResponseEntity<?> crearMasc(@Valid @RequestBody DtoMascota dto) {
         try{
-        DtoMascota  creado = mascSer.guardar(dto);
+        DtoMascota  creado = mascSer.crear(dto);
         return ResponseEntity.status(HttpStatus.CREATED)
         .body(Map.of("mensaje", "MAscota creado exitosamente", "data", creado));
     }catch(IllegalStateException ex){

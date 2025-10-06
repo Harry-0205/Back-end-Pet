@@ -24,7 +24,7 @@ public class Agendamiento {
 
     private Date fecAsi;
 
-    private Boolean estado;
+    private Boolean estado = true;
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "id_mascota", foreignKey = @ForeignKey(name = "FK_mascota"))

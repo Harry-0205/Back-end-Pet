@@ -63,8 +63,8 @@ public class MascotaServiceImple implements MascotaService {
 
     @Override
     @Transactional
-    public DtoMascota guardar (MascotaCreateDto dto){
-    Mascota mascota = mascMap.toMascotaCreate(dto);
+    public DtoMascota guardar (DtoMascota dto){
+    Mascota mascota = mascMap.toMascota(dto);
     Mascota guardado =mascRepo.save(mascota);
     return mascMap.toDtoMascota(guardado);
     }

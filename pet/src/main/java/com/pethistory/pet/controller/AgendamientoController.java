@@ -49,7 +49,7 @@ public class AgendamientoController {
     }
 
 
-    @PutMapping("/Actualizar{id}")
+    @PutMapping("/Actualizar/{id}")
     public ResponseEntity<AgendamientoDto> actualizar(@PathVariable Long id, @Valid @RequestBody AgendamientoDto dto) {
         AgendamientoDto actualizado = agenServ.actualizar(id, dto);
         return ResponseEntity.ok(actualizado);

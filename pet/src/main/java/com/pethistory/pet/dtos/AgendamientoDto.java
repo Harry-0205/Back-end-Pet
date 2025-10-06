@@ -26,15 +26,15 @@ public class AgendamientoDto {
 
     private String nomMasc;
     
-
+    @NotNull
     private Long idProcedimientos;
 
-    @NotNull
+
     private String procedimientos;
 
-    private Long idVeterinarias;
-
     @NotNull
+    private Long idVeterinarias;
+    
     private String nomVet;
 
     private Boolean estado;
