@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.pethistory.pet.dtos.VeterinariasDto;
 import com.pethistory.pet.service.VeterinariasService;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
@@ -30,7 +29,7 @@ public class VeterinariasController {
         return ResponseEntity.ok(vetdto);
     }
     @GetMapping
-    public ResponseEntity <List<VeterinariasDto>>getveterinarias(@PathVariable Long id){
+    public ResponseEntity <List<VeterinariasDto>>getveterinarias( ){
         List<VeterinariasDto> lista=vetserv.listar();
         return ResponseEntity.ok(lista);
     }
