@@ -21,8 +21,8 @@ public class GlobalExceptionHandler {
             "timestamp", LocalDateTime.now()
         ));
     }
-    @ExceptionHandler(IllegalStateException.class)
-    public ResponseEntity<Map<String, Object>> manejarArgumentoInvalido(IllegalStateException ex){
+    @ExceptionHandler(IllegalArgumentException.class)
+    public ResponseEntity<Map<String, Object>> manejarArgumentoInvalido(IllegalArgumentException ex){
         return ResponseEntity.status(HttpStatus.BAD_REQUEST)
         .body(Map.of(
             "error", ex.getMessage(),

@@ -13,6 +13,4 @@ import com.pethistory.pet.models.UsuarioRoles;
 public interface UsuarioRolesRepo extends JpaRepository<UsuarioRoles,UsuarioRolId> {
     List<UsuarioRoles> findByUsuario_id(Long idDoc);
     List<UsuarioRoles> findByRol_id(Long idRol);
-    Optional<UsuarioRoles> findByUser(String user);
-
 }

@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 public class DtoMascota {
-    @NotNull
+    
     private Long idMasc;
 
     @NotNull

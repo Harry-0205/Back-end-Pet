@@ -40,6 +40,7 @@ public class UsuarioMapperImple implements UsuarioMapper{
         usuario.setTipoDoc(tipoDoc);
         Cuenta cuenta = new Cuenta();
         cuenta.setCorreo(dtoUsuario.getCorreo());
+        usuario.setCuenta(cuenta);
         cuenta.setContra(dtoUsuario.getPassw());
         return usuario;
     }

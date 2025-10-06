@@ -1,5 +1,7 @@
 package com.pethistory.pet.service;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import com.pethistory.pet.dtos.VeterinariasDto;
@@ -8,6 +10,7 @@ import com.pethistory.pet.models.Veterinarias;
 import com.pethistory.pet.repositories.VeterinariasRepositories;
 
 import jakarta.persistence.EntityNotFoundException;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class VeterinariasServiceImple implements VeterinariasService{
@@ -34,10 +37,16 @@ public VeterinariasDto niit(Long id){
 public VeterinariasDto cambiar(VeterinariasDto veterinariasDto){
     Veterinarias veterinarias=veterep.findById(veterinariasDto.getIdVeterinaria())
     .orElseThrow(()-> new EntityNotFoundException("Veterinaria no fue posible acrualizar"));
-    
+
+
     Veterinarias actualizada=veterep.save(veterinarias);
     return vetemap.toVeterinariasDto((actualizada));
 }
 
+@Override
+@Transactional
+public List<VeterinariasDto> listar(){
+    return veterep.findAll().stream().map(vetemap::toVeterinariasDto).toList();
 }
 
+}

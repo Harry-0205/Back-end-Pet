@@ -16,7 +16,7 @@ public class DtoUsuarioUpdate {
 
     private String direccion;
 
-    private String correo;
+    private String correo;  
 
-    private byte [] contraseña;
+    private String contraseña;
 }

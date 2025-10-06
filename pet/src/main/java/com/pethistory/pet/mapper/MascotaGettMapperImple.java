@@ -30,10 +30,9 @@ public MascotaGettMapperImple(ColorRepositorio colorRepo, UsuarioRepo usuarioDoc
 @Override
 public Mascota toMascota(DtoMascota dtoMascota){
     if (dtoMascota == null){
-    return null;
+        return null;
     }
     Mascota mascota = new Mascota();
-    mascota.setId(dtoMascota.getIdMasc());
     mascota.setNombre(dtoMascota.getNom());
     mascota.setFecNam(dtoMascota.getFecNam());
     mascota.setFoto(dtoMascota.getFoto());
