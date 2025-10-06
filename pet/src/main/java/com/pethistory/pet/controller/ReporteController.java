@@ -39,7 +39,7 @@ public class ReporteController {
         return ResponseEntity.ok(repList);
     }
     
-    @GetMapping("/prohiscli{id}")
+    @GetMapping("/prohiscli/{id}")
     public ResponseEntity<List<ReporteDto>> buscarRep(@PathVariable Long id) {
         return ResponseEntity.ok(prohiscliserv.listarPorProcedimiento(id));
     }
